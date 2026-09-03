@@ -235,7 +235,7 @@ Distribuição dos campos entre os blocos:
 
 | Bloco | Campos |
 |---|---|
-| Material | Preço do filamento por kg · peso da peça |
+| Material | Preço do filamento /kg · peso da peça |
 | Impressão | Impressora (dropdown) · tempo · quantidade · reserva de falha (%) · UF e tarifa de energia |
 | Custos do projeto | Lista de itens (nome, valor unitário, quantidade) · frete repassado |
 | Precificação | Perfil de escassez · ajuste de markup · imposto (%) · taxa de pagamento (%) |

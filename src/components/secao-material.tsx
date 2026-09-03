@@ -16,7 +16,7 @@ export function SecaoMaterial({ estado, alterar }: Props) {
       {/* Dois campos de poucos dígitos, meia largura cada. */}
       <div className="grid grid-cols-2 gap-3">
         <CampoMoeda
-          label="Preço do filamento por kg"
+          label="Preço do filamento /kg"
           ajuda="Rolo de 1 kg? É o preço que você pagou nele."
           valor={estado.precoKg}
           onChange={(valor) => alterar('precoKg', valor)}
