@@ -1,0 +1,15 @@
+{
+  "referencia": "IMPRESSORAS_PADRAO do System3D Lab, 2026-09. Sem taxaHoraria: o campo existe na origem mas nao entra em nenhum calculo (seu unico consumidor seria custoTempo, que esta fixo em zero).",
+  "itens": [
+    { "chave": "bambu-lab-a1", "nome": "Bambu Lab A1", "marca": "Bambu Lab", "precoCompra": 3000, "vidaUtilHoras": 6000, "consumoKwh": 0.12, "custoManutencaoMes": 30 },
+    { "chave": "bambu-lab-a1-mini", "nome": "Bambu Lab A1 Mini", "marca": "Bambu Lab", "precoCompra": 1800, "vidaUtilHoras": 5000, "consumoKwh": 0.06, "custoManutencaoMes": 25 },
+    { "chave": "bambu-lab-p1s", "nome": "Bambu Lab P1S", "marca": "Bambu Lab", "precoCompra": 5000, "vidaUtilHoras": 7000, "consumoKwh": 0.14, "custoManutencaoMes": 50 },
+    { "chave": "bambu-lab-x1-carbon", "nome": "Bambu Lab X1 Carbon", "marca": "Bambu Lab", "precoCompra": 9000, "vidaUtilHoras": 8000, "consumoKwh": 0.16, "custoManutencaoMes": 80 },
+    { "chave": "creality-ender-3-v3-se", "nome": "Creality Ender-3 V3 SE", "marca": "Creality", "precoCompra": 1600, "vidaUtilHoras": 4000, "consumoKwh": 0.1, "custoManutencaoMes": 40 },
+    { "chave": "creality-ender-3-v3-ke", "nome": "Creality Ender-3 V3 KE", "marca": "Creality", "precoCompra": 2200, "vidaUtilHoras": 4500, "consumoKwh": 0.11, "custoManutencaoMes": 45 },
+    { "chave": "creality-k1c", "nome": "Creality K1C", "marca": "Creality", "precoCompra": 3800, "vidaUtilHoras": 6000, "consumoKwh": 0.14, "custoManutencaoMes": 60 },
+    { "chave": "original-prusa-mk4s", "nome": "Original Prusa MK4S", "marca": "Prusa Research", "precoCompra": 6500, "vidaUtilHoras": 8000, "consumoKwh": 0.1, "custoManutencaoMes": 45 },
+    { "chave": "elegoo-neptune-4-pro", "nome": "Elegoo Neptune 4 Pro", "marca": "Elegoo", "precoCompra": 2200, "vidaUtilHoras": 4500, "consumoKwh": 0.11, "custoManutencaoMes": 45 },
+    { "chave": "anycubic-kobra-3-combo", "nome": "Anycubic Kobra 3 Combo", "marca": "Anycubic", "precoCompra": 3000, "vidaUtilHoras": 5000, "consumoKwh": 0.12, "custoManutencaoMes": 50 }
+  ]
+}

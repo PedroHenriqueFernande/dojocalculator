@@ -1,0 +1,8 @@
+{
+  "referencia": "Valores do seed do System3D Lab, 2026-09. Taxa de marketplace muda com frequencia: conferir a tabela vigente da plataforma antes do lancamento e periodicamente. Todos editaveis na interface.",
+  "itens": [
+    { "id": "DIRETA", "nome": "Venda direta", "taxaMarket": 0, "taxaFixa": 0, "taxaFixaTipo": "VALOR" },
+    { "id": "SHOPEE", "nome": "Shopee", "taxaMarket": 14, "taxaFixa": 4, "taxaFixaTipo": "VALOR", "freteGratisShopee": false },
+    { "id": "MERCADOLIVRE", "nome": "Mercado Livre", "taxaMarket": 16, "taxaFixa": 6.5, "taxaFixaTipo": "VALOR" }
+  ]
+}
