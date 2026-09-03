@@ -8,7 +8,12 @@ const DECIMAL = new Intl.NumberFormat('pt-BR', {
   maximumFractionDigits: 2,
 });
 
-export function formatarMoeda(valor: number, opcoes?: { simbolo?: boolean }): string {
+export function formatarMoeda(entrada: number, opcoes?: { simbolo?: boolean }): string {
+  // O contrato aqui é formatar um valor em dinheiro. NaN e Infinity não são
+  // valores em dinheiro, e a saída do Intl para eles é a string "NaN" — que
+  // numa calculadora de preço é pior do que qualquer número. Vira zero.
+  const valor = Number.isFinite(entrada) ? entrada : 0;
+
   if (opcoes?.simbolo === false) return DECIMAL.format(valor);
 
   // Intl separa "R$" do número com espaço inquebrável (U+00A0). Trocamos por

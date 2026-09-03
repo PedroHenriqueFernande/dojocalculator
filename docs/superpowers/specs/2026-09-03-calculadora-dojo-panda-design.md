@@ -295,7 +295,13 @@ espaçamento: 4 · 8 · 12 · 16 · 24 · 32 · 48
 
 ### 8.3 Estados
 
-Primeira abertura já vem com um cenário de exemplo preenchido — a tela nunca nasce zerada, e o comprador vê um resultado válido em menos de um segundo. Demais estados: digitando (recálculo contínuo), erro de campo (valor inválido ou negativo) e erro de regra (taxas somando ≥ 100% derrubam o cálculo, com explicação no lugar do número).
+Primeira abertura vem zerada, com um estado vazio explícito no lugar do preço: *"Seu preço aparece aqui"* mais a lista do que preencher. Os canais mostram travessão em vez de valor, e a capacidade produtiva não aparece.
+
+Esse estado vazio não é decoração. Com custo zero a fórmula ainda devolve preço — a taxa fixa do canal precisa ser coberta de qualquer maneira, e no Mercado Livre isso derruba o resultado abaixo de R$ 12,50, dispara o divisor reduzido e produz um "lucro" que é só artefato do gross-up. Matematicamente correto; como tela, diria a um iniciante que dá para lucrar vendendo nada. Enquanto não há peça, não há preço.
+
+A única exceção ao zero é a tarifa de energia, que parte de R$ 0,85 — quase ninguém sabe o valor do kWh de cabeça, e o campo é ajustável pelo estado.
+
+Demais estados: digitando (recálculo contínuo), erro de campo (valor inválido ou negativo) e erro de regra (taxas somando ≥ 100% derrubam o cálculo, com explicação no lugar do número).
 
 Não há estado de carregamento: o cálculo é síncrono e local.
 

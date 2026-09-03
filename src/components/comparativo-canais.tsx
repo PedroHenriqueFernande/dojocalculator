@@ -9,6 +9,7 @@ interface Props {
   canais: Canal[];
   resultados: ResultadoDoCanal[];
   canalAtivo: string;
+  semCusto: boolean;
   onSelecionar: (id: string) => void;
   onAlterarCanal: (id: string, mudanca: Partial<Canal>) => void;
 }
@@ -17,6 +18,7 @@ export function ComparativoCanais({
   canais,
   resultados,
   canalAtivo,
+  semCusto,
   onSelecionar,
   onAlterarCanal,
 }: Props) {
@@ -61,7 +63,11 @@ export function ComparativoCanais({
               {resultado.canalNome}
             </span>
 
-            {resultado.consumidor.ok && resultado.resumoConsumidor ? (
+            {semCusto ? (
+              <span aria-hidden className="text-tinta-3">
+                —
+              </span>
+            ) : resultado.consumidor.ok && resultado.resumoConsumidor ? (
               <span className="flex items-baseline gap-2 text-right">
                 <span className="text-[10px] text-tinta-2">
                   lucro {formatarMoeda(resultado.resumoConsumidor.lucroLiquido)}

@@ -8,6 +8,8 @@ import { Botao } from './ui/botao';
 interface Props {
   canal: ResultadoDoCanal;
   quantidade: number;
+  /** Nada preenchido ainda: não há peça para precificar. */
+  semCusto: boolean;
 }
 
 type EstadoCopia =
@@ -20,12 +22,31 @@ type EstadoCopia =
  * rodapé do mobile — só o posicionamento muda. Dois componentes renderizando
  * o mesmo preço divergiriam na primeira alteração.
  */
-export function PainelResultado({ canal, quantidade }: Props) {
+export function PainelResultado({ canal, quantidade, semCusto }: Props) {
   const [aberto, setAberto] = useState(false);
   const [copia, setCopia] = useState<EstadoCopia>(null);
 
   const posicao =
     'fixed inset-x-0 bottom-0 z-10 max-h-[70vh] overflow-y-auto rounded-none border-x-0 border-b-0 shadow-none lg:static lg:max-h-none lg:overflow-visible lg:rounded-painel lg:border-[1.5px] lg:shadow-[4px_4px_0_var(--color-tinta)]';
+
+  /*
+   * Com custo zero a fórmula ainda devolve preço — a taxa fixa do canal
+   * precisa ser coberta de qualquer jeito, e no Mercado Livre isso dispara a
+   * regra dos R$ 12,50 e produz um "lucro" que é só artefato do gross-up.
+   * Está certo como matemática e é enganoso como tela, então enquanto não há
+   * peça para precificar não há preço para mostrar.
+   */
+  if (semCusto) {
+    return (
+      <section className={`painel p-4 ${posicao}`} aria-label="Resultado do cálculo">
+        <h2 className="titulo-painel mb-2 text-tinta-2">Seu preço aparece aqui</h2>
+        <p className="text-xs leading-relaxed text-tinta-2">
+          Preencha o <strong>preço do filamento</strong>, o <strong>peso da peça</strong> e
+          o <strong>tempo de impressão</strong>. O cálculo acompanha cada tecla.
+        </p>
+      </section>
+    );
+  }
 
   if (!canal.consumidor.ok) {
     return (

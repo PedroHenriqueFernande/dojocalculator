@@ -25,16 +25,25 @@ export function SecaoImpressao({ estado, alterar, setEstado }: Props) {
   const trocarImpressora = (chave: string) => {
     const impressora = IMPRESSORAS.find((i) => i.chave === chave);
 
-    setEstado((atual) => ({
-      ...atual,
-      impressoraChave: chave,
-      ...(impressora && {
-        precoCompraImpressora: impressora.precoCompra,
-        vidaUtilHorasImpressora: impressora.vidaUtilHoras,
-        custoManutencaoMes: impressora.custoManutencaoMes,
-        consumoKwh: impressora.consumoKwh,
-      }),
-    }));
+    // Voltar para "nenhuma" zera os valores da máquina; sem isso o custo
+    // continuaria carregando a amortização de uma impressora não selecionada.
+    const valores = impressora
+      ? {
+          precoCompraImpressora: impressora.precoCompra,
+          vidaUtilHorasImpressora: impressora.vidaUtilHoras,
+          custoManutencaoMes: impressora.custoManutencaoMes,
+          consumoKwh: impressora.consumoKwh,
+        }
+      : chave === IMPRESSORA_MANUAL
+        ? {}
+        : {
+            precoCompraImpressora: 0,
+            vidaUtilHorasImpressora: 0,
+            custoManutencaoMes: 0,
+            consumoKwh: 0,
+          };
+
+    setEstado((atual) => ({ ...atual, impressoraChave: chave, ...valores }));
   };
 
   const trocarUf = (uf: string) => {
@@ -49,6 +58,7 @@ export function SecaoImpressao({ estado, alterar, setEstado }: Props) {
         value={estado.impressoraChave}
         onChange={(e) => trocarImpressora(e.target.value)}
         opcoes={[
+          { valor: '', rotulo: 'Selecione a impressora' },
           ...IMPRESSORAS.map((i) => ({ valor: i.chave, rotulo: i.nome })),
           { valor: IMPRESSORA_MANUAL, rotulo: 'Outra impressora…' },
         ]}
@@ -125,7 +135,10 @@ export function SecaoImpressao({ estado, alterar, setEstado }: Props) {
           label="Tarifa de energia por estado"
           value={estado.uf}
           onChange={(e) => trocarUf(e.target.value)}
-          opcoes={TARIFAS_ENERGIA.map((t) => ({ valor: t.uf, rotulo: t.nome }))}
+          opcoes={[
+            { valor: '', rotulo: 'Média nacional' },
+            ...TARIFAS_ENERGIA.map((t) => ({ valor: t.uf, rotulo: t.nome })),
+          ]}
         />
         <CampoMoeda
           label="Valor do kWh"

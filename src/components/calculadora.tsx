@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { calcular } from '@/lib/calculo';
 import type { Canal, ItemProjeto, PerfilEscassez } from '@/lib/calculo';
-import { CANAIS_PADRAO, IMPRESSORAS, TARIFAS_ENERGIA } from '@/lib/dados';
+import { CANAIS_PADRAO, TARIFA_PADRAO } from '@/lib/dados';
 import { CapacidadeProdutiva } from './capacidade-produtiva';
 import { ComparativoCanais } from './comparativo-canais';
 import { PainelResultado } from './painel-resultado';
@@ -40,23 +40,20 @@ export type Alterar = <C extends keyof EstadoCalculadora>(
   valor: EstadoCalculadora[C],
 ) => void;
 
-const IMPRESSORA_INICIAL =
-  IMPRESSORAS.find((i) => i.chave === 'bambu-lab-p1s') ?? IMPRESSORAS[0];
-const UF_INICIAL = TARIFAS_ENERGIA.find((t) => t.uf === 'SP') ?? TARIFAS_ENERGIA[0];
-
-// A tela nunca nasce zerada: quem acabou de comprar vê um resultado válido
-// antes de digitar qualquer coisa.
+// Comeca zerada: a pessoa preenche com os numeros da peca dela. A unica
+// excecao e a tarifa de energia, que parte da media nacional porque quase
+// ninguem sabe o valor do kWh de cabeca — e ela e ajustavel pelo estado.
 const ESTADO_INICIAL: EstadoCalculadora = {
-  precoKg: 89.9,
-  pesoGramas: 42,
-  impressoraChave: IMPRESSORA_INICIAL.chave,
-  precoCompraImpressora: IMPRESSORA_INICIAL.precoCompra,
-  vidaUtilHorasImpressora: IMPRESSORA_INICIAL.vidaUtilHoras,
-  custoManutencaoMes: IMPRESSORA_INICIAL.custoManutencaoMes,
-  consumoKwh: IMPRESSORA_INICIAL.consumoKwh,
-  uf: UF_INICIAL.uf,
-  custoKwh: UF_INICIAL.tarifa,
-  tempoImpressaoMin: 200,
+  precoKg: 0,
+  pesoGramas: 0,
+  impressoraChave: '',
+  precoCompraImpressora: 0,
+  vidaUtilHorasImpressora: 0,
+  custoManutencaoMes: 0,
+  consumoKwh: 0,
+  uf: '',
+  custoKwh: TARIFA_PADRAO,
+  tempoImpressaoMin: 0,
   quantidade: 1,
   percentualFalha: 0,
   itensProjeto: [],
@@ -98,6 +95,8 @@ export function Calculadora() {
   const canalAtivo =
     resultado.canais.find((c) => c.canalId === estado.canalAtivo) ?? resultado.canais[0];
 
+  const semCusto = resultado.custoBase.custoTotalBase === 0;
+
   return (
     // O padding inferior no mobile existe para o último bloco escapar da barra
     // fixa de preço, que mede 222px recolhida. 256px dá folga para as variações
@@ -133,13 +132,18 @@ export function Calculadora() {
         */}
         <div className="grid gap-5">
           <div className="lg:sticky lg:top-6">
-            <PainelResultado canal={canalAtivo} quantidade={estado.quantidade} />
+            <PainelResultado
+              canal={canalAtivo}
+              quantidade={estado.quantidade}
+              semCusto={semCusto}
+            />
           </div>
 
           <ComparativoCanais
             canais={estado.canais}
             resultados={resultado.canais}
             canalAtivo={estado.canalAtivo}
+            semCusto={semCusto}
             onSelecionar={(id) => alterar('canalAtivo', id)}
             onAlterarCanal={(id, mudanca) =>
               alterar(
@@ -151,7 +155,7 @@ export function Calculadora() {
         </div>
       </div>
 
-      {canalAtivo.capacidade && (
+      {!semCusto && canalAtivo.capacidade && (
         <CapacidadeProdutiva capacidade={canalAtivo.capacidade} />
       )}
     </main>

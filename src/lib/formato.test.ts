@@ -19,6 +19,13 @@ describe('formatarMoeda', () => {
   it('omite o símbolo quando pedido', () => {
     expect(formatarMoeda(1234.5, { simbolo: false })).toBe('1.234,50');
   });
+
+  it('nunca deixa "NaN" chegar à tela', () => {
+    expect(formatarMoeda(Number.NaN)).toBe('R$ 0,00');
+    expect(formatarMoeda(Number.POSITIVE_INFINITY)).toBe('R$ 0,00');
+    expect(formatarMoeda(Number.NaN, { simbolo: false })).toBe('0,00');
+    expect(formatarMoeda(undefined as unknown as number)).toBe('R$ 0,00');
+  });
 });
 
 describe('lerMoeda', () => {
