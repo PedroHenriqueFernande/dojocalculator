@@ -56,7 +56,7 @@ export function SecaoImpressao({ estado, alterar, setEstado }: Props) {
       <Select
         label="Impressora"
         value={estado.impressoraChave}
-        onChange={(e) => trocarImpressora(e.target.value)}
+        onChange={trocarImpressora}
         opcoes={[
           { valor: '', rotulo: 'Selecione a impressora' },
           ...IMPRESSORAS.map((i) => ({ valor: i.chave, rotulo: i.nome })),
@@ -134,7 +134,7 @@ export function SecaoImpressao({ estado, alterar, setEstado }: Props) {
         <Select
           label="Tarifa de energia por estado"
           value={estado.uf}
-          onChange={(e) => trocarUf(e.target.value)}
+          onChange={trocarUf}
           opcoes={[
             { valor: '', rotulo: 'Média nacional' },
             ...TARIFAS_ENERGIA.map((t) => ({ valor: t.uf, rotulo: t.nome })),

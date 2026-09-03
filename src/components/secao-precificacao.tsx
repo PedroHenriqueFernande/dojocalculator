@@ -44,7 +44,7 @@ export function SecaoPrecificacao({
       <Select
         label="Tipo de peça"
         value={estado.perfilEscassez}
-        onChange={(e) => alterar('perfilEscassez', e.target.value as PerfilEscassez)}
+        onChange={(valor) => alterar('perfilEscassez', valor as PerfilEscassez)}
         opcoes={PERFIS.map((p) => ({ valor: p.valor, rotulo: p.rotulo }))}
       />
       <p className="mt-1 text-[10px] leading-snug text-tinta-3">{perfil.explicacao}</p>
