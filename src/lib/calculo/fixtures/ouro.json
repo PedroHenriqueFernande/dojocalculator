@@ -1,0 +1,3236 @@
+[
+  {
+    "nome": "base-uma-peca",
+    "entrada": {
+      "precoKg": 89.9,
+      "pesoGramas": 42,
+      "quantidade": 1,
+      "tempoImpressaoMin": 200,
+      "precoCompraImpressora": 5000,
+      "vidaUtilHorasImpressora": 7000,
+      "custoManutencaoMes": 50,
+      "consumoKwh": 0.14,
+      "custoKwh": 0.85,
+      "itensProjeto": [],
+      "percentualFalha": 0,
+      "valorFrete": 0,
+      "perfil": "DEMANDA_PADRAO",
+      "ajusteMarkup": 1,
+      "impostoPercentual": 0,
+      "taxaPagamentoPercentual": 0,
+      "freteGratisShopee": false
+    },
+    "custoBase": {
+      "custoMaterial": 3.78,
+      "custoTempo": 0,
+      "custoEnergia": 0.4,
+      "custoAmortizacao": 2.38,
+      "amortizacaoHora": 0.71,
+      "custoManutencaoMes": 50,
+      "custoManutencaoPorHora": 0.1,
+      "custoManutencaoRateado": 0.32,
+      "precoCompraImpressora": 5000,
+      "vidaUtilHorasImpressora": 7000,
+      "custoFixoRateado": 0,
+      "custoTotalBase": 6.88,
+      "totalCustosFixosSelecionados": 0,
+      "custosFixosSelecionados": [],
+      "custoFixoPorHora": 0,
+      "horasFixasMensaisConsideradas": 520,
+      "totalAcessoriosEmbalagens": 0,
+      "acessoriosEmbalagens": [],
+      "materiais": [
+        {
+          "filamentoId": "x",
+          "nome": "Filamento",
+          "material": "PLA",
+          "cor": "-",
+          "precoKg": 89.9,
+          "pesoGramas": 42,
+          "custo": 3.78
+        }
+      ],
+      "nomeFilamento": "Filamento",
+      "precoKgFilamento": 89.9,
+      "pesoFilamentoGramas": 42,
+      "tempoFormatado": "3h 20min",
+      "nomeImpressora": "Impressora",
+      "custoKwh": 0.85,
+      "consumoKwh": 0.14
+    },
+    "consumidor": [
+      {
+        "canalVenda": "DIRETA",
+        "canalLabel": "Venda direta",
+        "taxaMarket": 0,
+        "valorTaxaMarket": 0,
+        "taxaFixa": 0,
+        "taxaFixaTipo": "VALOR",
+        "taxaFixaPercentual": 0,
+        "taxaGatewayPercent": 0,
+        "valorTaxaGateway": 0,
+        "taxaGatewayFixa": 0,
+        "impostos": [],
+        "totalImpostosCanal": 0,
+        "markup": 1.6,
+        "impostoPercentual": 0,
+        "valorImposto": 0,
+        "taxaPagamentoPercentual": 0,
+        "valorTaxaPagamento": 0,
+        "precoVendaSemFalha": 11.01,
+        "precoVendaSemFrete": 11.01,
+        "valorFrete": 0,
+        "percentualFalha": 0,
+        "valorFalha": 0,
+        "precoVenda": 11.01,
+        "lucroLiquido": 4.13,
+        "totalTaxas": 0,
+        "percentualTaxas": 0,
+        "cascata": [
+          {
+            "label": "Preço de Venda",
+            "valor": 11.01,
+            "tipo": "receita"
+          },
+          {
+            "label": "Custo Material",
+            "valor": -3.78,
+            "tipo": "custo"
+          },
+          {
+            "label": "Amortizacao Impressora",
+            "valor": -2.38,
+            "tipo": "custo"
+          },
+          {
+            "label": "Manutencao Impressora",
+            "valor": -0.32,
+            "tipo": "custo"
+          },
+          {
+            "label": "Custo Energia",
+            "valor": -0.4,
+            "tipo": "custo"
+          },
+          {
+            "label": "Lucro Líquido",
+            "valor": 4.13,
+            "tipo": "resultado"
+          }
+        ]
+      },
+      {
+        "canalVenda": "SHOPEE",
+        "canalLabel": "Shopee",
+        "taxaMarket": 14,
+        "valorTaxaMarket": 2.44,
+        "taxaFixa": 4,
+        "taxaFixaTipo": "VALOR",
+        "taxaFixaPercentual": 0,
+        "taxaGatewayPercent": 0,
+        "valorTaxaGateway": 0,
+        "taxaGatewayFixa": 0,
+        "impostos": [],
+        "totalImpostosCanal": 0,
+        "markup": 1.6,
+        "impostoPercentual": 0,
+        "valorImposto": 0,
+        "taxaPagamentoPercentual": 0,
+        "valorTaxaPagamento": 0,
+        "precoVendaSemFalha": 17.45,
+        "precoVendaSemFrete": 17.45,
+        "valorFrete": 0,
+        "percentualFalha": 0,
+        "valorFalha": 0,
+        "precoVenda": 17.45,
+        "lucroLiquido": 4.13,
+        "totalTaxas": 6.44,
+        "percentualTaxas": 36.92,
+        "cascata": [
+          {
+            "label": "Preço de Venda",
+            "valor": 17.45,
+            "tipo": "receita"
+          },
+          {
+            "label": "Taxa Shopee (14%)",
+            "valor": -2.44,
+            "tipo": "deducao",
+            "percentual": 14
+          },
+          {
+            "label": "Taxa Fixa Shopee",
+            "valor": -4,
+            "tipo": "deducao"
+          },
+          {
+            "label": "Custo Material",
+            "valor": -3.78,
+            "tipo": "custo"
+          },
+          {
+            "label": "Amortizacao Impressora",
+            "valor": -2.38,
+            "tipo": "custo"
+          },
+          {
+            "label": "Manutencao Impressora",
+            "valor": -0.32,
+            "tipo": "custo"
+          },
+          {
+            "label": "Custo Energia",
+            "valor": -0.4,
+            "tipo": "custo"
+          },
+          {
+            "label": "Lucro Líquido",
+            "valor": 4.13,
+            "tipo": "resultado"
+          }
+        ]
+      },
+      {
+        "canalVenda": "MERCADOLIVRE",
+        "canalLabel": "Mercado Livre",
+        "taxaMarket": 16,
+        "valorTaxaMarket": 3.33,
+        "taxaFixa": 6.5,
+        "taxaFixaTipo": "VALOR",
+        "taxaFixaPercentual": 0,
+        "taxaGatewayPercent": 0,
+        "valorTaxaGateway": 0,
+        "taxaGatewayFixa": 0,
+        "impostos": [],
+        "totalImpostosCanal": 0,
+        "markup": 1.6,
+        "impostoPercentual": 0,
+        "valorImposto": 0,
+        "taxaPagamentoPercentual": 0,
+        "valorTaxaPagamento": 0,
+        "precoVendaSemFalha": 20.84,
+        "precoVendaSemFrete": 20.84,
+        "valorFrete": 0,
+        "percentualFalha": 0,
+        "valorFalha": 0,
+        "precoVenda": 20.84,
+        "lucroLiquido": 4.13,
+        "totalTaxas": 9.83,
+        "percentualTaxas": 47.19,
+        "cascata": [
+          {
+            "label": "Preço de Venda",
+            "valor": 20.84,
+            "tipo": "receita"
+          },
+          {
+            "label": "Taxa Mercado Livre (16%)",
+            "valor": -3.33,
+            "tipo": "deducao",
+            "percentual": 16
+          },
+          {
+            "label": "Taxa Fixa Mercado Livre",
+            "valor": -6.5,
+            "tipo": "deducao"
+          },
+          {
+            "label": "Custo Material",
+            "valor": -3.78,
+            "tipo": "custo"
+          },
+          {
+            "label": "Amortizacao Impressora",
+            "valor": -2.38,
+            "tipo": "custo"
+          },
+          {
+            "label": "Manutencao Impressora",
+            "valor": -0.32,
+            "tipo": "custo"
+          },
+          {
+            "label": "Custo Energia",
+            "valor": -0.4,
+            "tipo": "custo"
+          },
+          {
+            "label": "Lucro Líquido",
+            "valor": 4.13,
+            "tipo": "resultado"
+          }
+        ]
+      }
+    ],
+    "lojista": [
+      {
+        "canalVenda": "DIRETA",
+        "canalLabel": "Venda direta",
+        "taxaMarket": 0,
+        "valorTaxaMarket": 0,
+        "taxaFixa": 0,
+        "taxaFixaTipo": "VALOR",
+        "taxaFixaPercentual": 0,
+        "taxaGatewayPercent": 0,
+        "valorTaxaGateway": 0,
+        "taxaGatewayFixa": 0,
+        "impostos": [],
+        "totalImpostosCanal": 0,
+        "markup": 1.4,
+        "impostoPercentual": 0,
+        "valorImposto": 0,
+        "taxaPagamentoPercentual": 0,
+        "valorTaxaPagamento": 0,
+        "precoVendaSemFalha": 9.63,
+        "precoVendaSemFrete": 9.63,
+        "valorFrete": 0,
+        "percentualFalha": 0,
+        "valorFalha": 0,
+        "precoVenda": 9.63,
+        "lucroLiquido": 2.75,
+        "totalTaxas": 0,
+        "percentualTaxas": 0,
+        "cascata": [
+          {
+            "label": "Preço de Venda",
+            "valor": 9.63,
+            "tipo": "receita"
+          },
+          {
+            "label": "Custo Material",
+            "valor": -3.78,
+            "tipo": "custo"
+          },
+          {
+            "label": "Amortizacao Impressora",
+            "valor": -2.38,
+            "tipo": "custo"
+          },
+          {
+            "label": "Manutencao Impressora",
+            "valor": -0.32,
+            "tipo": "custo"
+          },
+          {
+            "label": "Custo Energia",
+            "valor": -0.4,
+            "tipo": "custo"
+          },
+          {
+            "label": "Lucro Líquido",
+            "valor": 2.75,
+            "tipo": "resultado"
+          }
+        ]
+      },
+      {
+        "canalVenda": "SHOPEE",
+        "canalLabel": "Shopee",
+        "taxaMarket": 14,
+        "valorTaxaMarket": 2.22,
+        "taxaFixa": 4,
+        "taxaFixaTipo": "VALOR",
+        "taxaFixaPercentual": 0,
+        "taxaGatewayPercent": 0,
+        "valorTaxaGateway": 0,
+        "taxaGatewayFixa": 0,
+        "impostos": [],
+        "totalImpostosCanal": 0,
+        "markup": 1.4,
+        "impostoPercentual": 0,
+        "valorImposto": 0,
+        "taxaPagamentoPercentual": 0,
+        "valorTaxaPagamento": 0,
+        "precoVendaSemFalha": 15.85,
+        "precoVendaSemFrete": 15.85,
+        "valorFrete": 0,
+        "percentualFalha": 0,
+        "valorFalha": 0,
+        "precoVenda": 15.85,
+        "lucroLiquido": 2.75,
+        "totalTaxas": 6.22,
+        "percentualTaxas": 39.23,
+        "cascata": [
+          {
+            "label": "Preço de Venda",
+            "valor": 15.85,
+            "tipo": "receita"
+          },
+          {
+            "label": "Taxa Shopee (14%)",
+            "valor": -2.22,
+            "tipo": "deducao",
+            "percentual": 14
+          },
+          {
+            "label": "Taxa Fixa Shopee",
+            "valor": -4,
+            "tipo": "deducao"
+          },
+          {
+            "label": "Custo Material",
+            "valor": -3.78,
+            "tipo": "custo"
+          },
+          {
+            "label": "Amortizacao Impressora",
+            "valor": -2.38,
+            "tipo": "custo"
+          },
+          {
+            "label": "Manutencao Impressora",
+            "valor": -0.32,
+            "tipo": "custo"
+          },
+          {
+            "label": "Custo Energia",
+            "valor": -0.4,
+            "tipo": "custo"
+          },
+          {
+            "label": "Lucro Líquido",
+            "valor": 2.75,
+            "tipo": "resultado"
+          }
+        ]
+      },
+      {
+        "canalVenda": "MERCADOLIVRE",
+        "canalLabel": "Mercado Livre",
+        "taxaMarket": 16,
+        "valorTaxaMarket": 3.07,
+        "taxaFixa": 6.5,
+        "taxaFixaTipo": "VALOR",
+        "taxaFixaPercentual": 0,
+        "taxaGatewayPercent": 0,
+        "valorTaxaGateway": 0,
+        "taxaGatewayFixa": 0,
+        "impostos": [],
+        "totalImpostosCanal": 0,
+        "markup": 1.4,
+        "impostoPercentual": 0,
+        "valorImposto": 0,
+        "taxaPagamentoPercentual": 0,
+        "valorTaxaPagamento": 0,
+        "precoVendaSemFalha": 19.2,
+        "precoVendaSemFrete": 19.2,
+        "valorFrete": 0,
+        "percentualFalha": 0,
+        "valorFalha": 0,
+        "precoVenda": 19.2,
+        "lucroLiquido": 2.75,
+        "totalTaxas": 9.57,
+        "percentualTaxas": 49.85,
+        "cascata": [
+          {
+            "label": "Preço de Venda",
+            "valor": 19.2,
+            "tipo": "receita"
+          },
+          {
+            "label": "Taxa Mercado Livre (16%)",
+            "valor": -3.07,
+            "tipo": "deducao",
+            "percentual": 16
+          },
+          {
+            "label": "Taxa Fixa Mercado Livre",
+            "valor": -6.5,
+            "tipo": "deducao"
+          },
+          {
+            "label": "Custo Material",
+            "valor": -3.78,
+            "tipo": "custo"
+          },
+          {
+            "label": "Amortizacao Impressora",
+            "valor": -2.38,
+            "tipo": "custo"
+          },
+          {
+            "label": "Manutencao Impressora",
+            "valor": -0.32,
+            "tipo": "custo"
+          },
+          {
+            "label": "Custo Energia",
+            "valor": -0.4,
+            "tipo": "custo"
+          },
+          {
+            "label": "Lucro Líquido",
+            "valor": 2.75,
+            "tipo": "resultado"
+          }
+        ]
+      }
+    ],
+    "capacidade": [
+      {
+        "tempoImpressaoMin": 200,
+        "lucroPorPeca": 4.13,
+        "lucroPorHora": 1.24,
+        "pecasPorDia": 6,
+        "lucroPorDia": 24.78,
+        "potencialMensal": 644.28,
+        "horasUteisConsideradas": 20,
+        "diasUteisConsiderados": 26,
+        "canalVenda": "DIRETA",
+        "canalLabel": "Venda direta"
+      },
+      {
+        "tempoImpressaoMin": 200,
+        "lucroPorPeca": 4.13,
+        "lucroPorHora": 1.24,
+        "pecasPorDia": 6,
+        "lucroPorDia": 24.78,
+        "potencialMensal": 644.28,
+        "horasUteisConsideradas": 20,
+        "diasUteisConsiderados": 26,
+        "canalVenda": "SHOPEE",
+        "canalLabel": "Shopee"
+      },
+      {
+        "tempoImpressaoMin": 200,
+        "lucroPorPeca": 4.13,
+        "lucroPorHora": 1.24,
+        "pecasPorDia": 6,
+        "lucroPorDia": 24.78,
+        "potencialMensal": 644.28,
+        "horasUteisConsideradas": 20,
+        "diasUteisConsiderados": 26,
+        "canalVenda": "MERCADOLIVRE",
+        "canalLabel": "Mercado Livre"
+      }
+    ]
+  },
+  {
+    "nome": "shopee-frete-gratis",
+    "entrada": {
+      "precoKg": 89.9,
+      "pesoGramas": 42,
+      "quantidade": 1,
+      "tempoImpressaoMin": 200,
+      "precoCompraImpressora": 5000,
+      "vidaUtilHorasImpressora": 7000,
+      "custoManutencaoMes": 50,
+      "consumoKwh": 0.14,
+      "custoKwh": 0.85,
+      "itensProjeto": [],
+      "percentualFalha": 0,
+      "valorFrete": 0,
+      "perfil": "DEMANDA_PADRAO",
+      "ajusteMarkup": 1,
+      "impostoPercentual": 0,
+      "taxaPagamentoPercentual": 0,
+      "freteGratisShopee": true
+    },
+    "custoBase": {
+      "custoMaterial": 3.78,
+      "custoTempo": 0,
+      "custoEnergia": 0.4,
+      "custoAmortizacao": 2.38,
+      "amortizacaoHora": 0.71,
+      "custoManutencaoMes": 50,
+      "custoManutencaoPorHora": 0.1,
+      "custoManutencaoRateado": 0.32,
+      "precoCompraImpressora": 5000,
+      "vidaUtilHorasImpressora": 7000,
+      "custoFixoRateado": 0,
+      "custoTotalBase": 6.88,
+      "totalCustosFixosSelecionados": 0,
+      "custosFixosSelecionados": [],
+      "custoFixoPorHora": 0,
+      "horasFixasMensaisConsideradas": 520,
+      "totalAcessoriosEmbalagens": 0,
+      "acessoriosEmbalagens": [],
+      "materiais": [
+        {
+          "filamentoId": "x",
+          "nome": "Filamento",
+          "material": "PLA",
+          "cor": "-",
+          "precoKg": 89.9,
+          "pesoGramas": 42,
+          "custo": 3.78
+        }
+      ],
+      "nomeFilamento": "Filamento",
+      "precoKgFilamento": 89.9,
+      "pesoFilamentoGramas": 42,
+      "tempoFormatado": "3h 20min",
+      "nomeImpressora": "Impressora",
+      "custoKwh": 0.85,
+      "consumoKwh": 0.14
+    },
+    "consumidor": [
+      {
+        "canalVenda": "DIRETA",
+        "canalLabel": "Venda direta",
+        "taxaMarket": 0,
+        "valorTaxaMarket": 0,
+        "taxaFixa": 0,
+        "taxaFixaTipo": "VALOR",
+        "taxaFixaPercentual": 0,
+        "taxaGatewayPercent": 0,
+        "valorTaxaGateway": 0,
+        "taxaGatewayFixa": 0,
+        "impostos": [],
+        "totalImpostosCanal": 0,
+        "markup": 1.6,
+        "impostoPercentual": 0,
+        "valorImposto": 0,
+        "taxaPagamentoPercentual": 0,
+        "valorTaxaPagamento": 0,
+        "precoVendaSemFalha": 11.01,
+        "precoVendaSemFrete": 11.01,
+        "valorFrete": 0,
+        "percentualFalha": 0,
+        "valorFalha": 0,
+        "precoVenda": 11.01,
+        "lucroLiquido": 4.13,
+        "totalTaxas": 0,
+        "percentualTaxas": 0,
+        "cascata": [
+          {
+            "label": "Preço de Venda",
+            "valor": 11.01,
+            "tipo": "receita"
+          },
+          {
+            "label": "Custo Material",
+            "valor": -3.78,
+            "tipo": "custo"
+          },
+          {
+            "label": "Amortizacao Impressora",
+            "valor": -2.38,
+            "tipo": "custo"
+          },
+          {
+            "label": "Manutencao Impressora",
+            "valor": -0.32,
+            "tipo": "custo"
+          },
+          {
+            "label": "Custo Energia",
+            "valor": -0.4,
+            "tipo": "custo"
+          },
+          {
+            "label": "Lucro Líquido",
+            "valor": 4.13,
+            "tipo": "resultado"
+          }
+        ]
+      },
+      {
+        "canalVenda": "SHOPEE",
+        "canalLabel": "Shopee",
+        "taxaMarket": 20,
+        "valorTaxaMarket": 3.75,
+        "taxaFixa": 4,
+        "taxaFixaTipo": "VALOR",
+        "taxaFixaPercentual": 0,
+        "taxaGatewayPercent": 0,
+        "valorTaxaGateway": 0,
+        "taxaGatewayFixa": 0,
+        "impostos": [],
+        "totalImpostosCanal": 0,
+        "markup": 1.6,
+        "impostoPercentual": 0,
+        "valorImposto": 0,
+        "taxaPagamentoPercentual": 0,
+        "valorTaxaPagamento": 0,
+        "precoVendaSemFalha": 18.76,
+        "precoVendaSemFrete": 18.76,
+        "valorFrete": 0,
+        "percentualFalha": 0,
+        "valorFalha": 0,
+        "precoVenda": 18.76,
+        "lucroLiquido": 4.13,
+        "totalTaxas": 7.75,
+        "percentualTaxas": 41.32,
+        "cascata": [
+          {
+            "label": "Preço de Venda",
+            "valor": 18.76,
+            "tipo": "receita"
+          },
+          {
+            "label": "Taxa Shopee (20%)",
+            "valor": -3.75,
+            "tipo": "deducao",
+            "percentual": 20
+          },
+          {
+            "label": "Taxa Fixa Shopee",
+            "valor": -4,
+            "tipo": "deducao"
+          },
+          {
+            "label": "Custo Material",
+            "valor": -3.78,
+            "tipo": "custo"
+          },
+          {
+            "label": "Amortizacao Impressora",
+            "valor": -2.38,
+            "tipo": "custo"
+          },
+          {
+            "label": "Manutencao Impressora",
+            "valor": -0.32,
+            "tipo": "custo"
+          },
+          {
+            "label": "Custo Energia",
+            "valor": -0.4,
+            "tipo": "custo"
+          },
+          {
+            "label": "Lucro Líquido",
+            "valor": 4.13,
+            "tipo": "resultado"
+          }
+        ]
+      },
+      {
+        "canalVenda": "MERCADOLIVRE",
+        "canalLabel": "Mercado Livre",
+        "taxaMarket": 16,
+        "valorTaxaMarket": 3.33,
+        "taxaFixa": 6.5,
+        "taxaFixaTipo": "VALOR",
+        "taxaFixaPercentual": 0,
+        "taxaGatewayPercent": 0,
+        "valorTaxaGateway": 0,
+        "taxaGatewayFixa": 0,
+        "impostos": [],
+        "totalImpostosCanal": 0,
+        "markup": 1.6,
+        "impostoPercentual": 0,
+        "valorImposto": 0,
+        "taxaPagamentoPercentual": 0,
+        "valorTaxaPagamento": 0,
+        "precoVendaSemFalha": 20.84,
+        "precoVendaSemFrete": 20.84,
+        "valorFrete": 0,
+        "percentualFalha": 0,
+        "valorFalha": 0,
+        "precoVenda": 20.84,
+        "lucroLiquido": 4.13,
+        "totalTaxas": 9.83,
+        "percentualTaxas": 47.19,
+        "cascata": [
+          {
+            "label": "Preço de Venda",
+            "valor": 20.84,
+            "tipo": "receita"
+          },
+          {
+            "label": "Taxa Mercado Livre (16%)",
+            "valor": -3.33,
+            "tipo": "deducao",
+            "percentual": 16
+          },
+          {
+            "label": "Taxa Fixa Mercado Livre",
+            "valor": -6.5,
+            "tipo": "deducao"
+          },
+          {
+            "label": "Custo Material",
+            "valor": -3.78,
+            "tipo": "custo"
+          },
+          {
+            "label": "Amortizacao Impressora",
+            "valor": -2.38,
+            "tipo": "custo"
+          },
+          {
+            "label": "Manutencao Impressora",
+            "valor": -0.32,
+            "tipo": "custo"
+          },
+          {
+            "label": "Custo Energia",
+            "valor": -0.4,
+            "tipo": "custo"
+          },
+          {
+            "label": "Lucro Líquido",
+            "valor": 4.13,
+            "tipo": "resultado"
+          }
+        ]
+      }
+    ],
+    "lojista": [
+      {
+        "canalVenda": "DIRETA",
+        "canalLabel": "Venda direta",
+        "taxaMarket": 0,
+        "valorTaxaMarket": 0,
+        "taxaFixa": 0,
+        "taxaFixaTipo": "VALOR",
+        "taxaFixaPercentual": 0,
+        "taxaGatewayPercent": 0,
+        "valorTaxaGateway": 0,
+        "taxaGatewayFixa": 0,
+        "impostos": [],
+        "totalImpostosCanal": 0,
+        "markup": 1.4,
+        "impostoPercentual": 0,
+        "valorImposto": 0,
+        "taxaPagamentoPercentual": 0,
+        "valorTaxaPagamento": 0,
+        "precoVendaSemFalha": 9.63,
+        "precoVendaSemFrete": 9.63,
+        "valorFrete": 0,
+        "percentualFalha": 0,
+        "valorFalha": 0,
+        "precoVenda": 9.63,
+        "lucroLiquido": 2.75,
+        "totalTaxas": 0,
+        "percentualTaxas": 0,
+        "cascata": [
+          {
+            "label": "Preço de Venda",
+            "valor": 9.63,
+            "tipo": "receita"
+          },
+          {
+            "label": "Custo Material",
+            "valor": -3.78,
+            "tipo": "custo"
+          },
+          {
+            "label": "Amortizacao Impressora",
+            "valor": -2.38,
+            "tipo": "custo"
+          },
+          {
+            "label": "Manutencao Impressora",
+            "valor": -0.32,
+            "tipo": "custo"
+          },
+          {
+            "label": "Custo Energia",
+            "valor": -0.4,
+            "tipo": "custo"
+          },
+          {
+            "label": "Lucro Líquido",
+            "valor": 2.75,
+            "tipo": "resultado"
+          }
+        ]
+      },
+      {
+        "canalVenda": "SHOPEE",
+        "canalLabel": "Shopee",
+        "taxaMarket": 20,
+        "valorTaxaMarket": 3.41,
+        "taxaFixa": 4,
+        "taxaFixaTipo": "VALOR",
+        "taxaFixaPercentual": 0,
+        "taxaGatewayPercent": 0,
+        "valorTaxaGateway": 0,
+        "taxaGatewayFixa": 0,
+        "impostos": [],
+        "totalImpostosCanal": 0,
+        "markup": 1.4,
+        "impostoPercentual": 0,
+        "valorImposto": 0,
+        "taxaPagamentoPercentual": 0,
+        "valorTaxaPagamento": 0,
+        "precoVendaSemFalha": 17.04,
+        "precoVendaSemFrete": 17.04,
+        "valorFrete": 0,
+        "percentualFalha": 0,
+        "valorFalha": 0,
+        "precoVenda": 17.04,
+        "lucroLiquido": 2.75,
+        "totalTaxas": 7.41,
+        "percentualTaxas": 43.47,
+        "cascata": [
+          {
+            "label": "Preço de Venda",
+            "valor": 17.04,
+            "tipo": "receita"
+          },
+          {
+            "label": "Taxa Shopee (20%)",
+            "valor": -3.41,
+            "tipo": "deducao",
+            "percentual": 20
+          },
+          {
+            "label": "Taxa Fixa Shopee",
+            "valor": -4,
+            "tipo": "deducao"
+          },
+          {
+            "label": "Custo Material",
+            "valor": -3.78,
+            "tipo": "custo"
+          },
+          {
+            "label": "Amortizacao Impressora",
+            "valor": -2.38,
+            "tipo": "custo"
+          },
+          {
+            "label": "Manutencao Impressora",
+            "valor": -0.32,
+            "tipo": "custo"
+          },
+          {
+            "label": "Custo Energia",
+            "valor": -0.4,
+            "tipo": "custo"
+          },
+          {
+            "label": "Lucro Líquido",
+            "valor": 2.75,
+            "tipo": "resultado"
+          }
+        ]
+      },
+      {
+        "canalVenda": "MERCADOLIVRE",
+        "canalLabel": "Mercado Livre",
+        "taxaMarket": 16,
+        "valorTaxaMarket": 3.07,
+        "taxaFixa": 6.5,
+        "taxaFixaTipo": "VALOR",
+        "taxaFixaPercentual": 0,
+        "taxaGatewayPercent": 0,
+        "valorTaxaGateway": 0,
+        "taxaGatewayFixa": 0,
+        "impostos": [],
+        "totalImpostosCanal": 0,
+        "markup": 1.4,
+        "impostoPercentual": 0,
+        "valorImposto": 0,
+        "taxaPagamentoPercentual": 0,
+        "valorTaxaPagamento": 0,
+        "precoVendaSemFalha": 19.2,
+        "precoVendaSemFrete": 19.2,
+        "valorFrete": 0,
+        "percentualFalha": 0,
+        "valorFalha": 0,
+        "precoVenda": 19.2,
+        "lucroLiquido": 2.75,
+        "totalTaxas": 9.57,
+        "percentualTaxas": 49.85,
+        "cascata": [
+          {
+            "label": "Preço de Venda",
+            "valor": 19.2,
+            "tipo": "receita"
+          },
+          {
+            "label": "Taxa Mercado Livre (16%)",
+            "valor": -3.07,
+            "tipo": "deducao",
+            "percentual": 16
+          },
+          {
+            "label": "Taxa Fixa Mercado Livre",
+            "valor": -6.5,
+            "tipo": "deducao"
+          },
+          {
+            "label": "Custo Material",
+            "valor": -3.78,
+            "tipo": "custo"
+          },
+          {
+            "label": "Amortizacao Impressora",
+            "valor": -2.38,
+            "tipo": "custo"
+          },
+          {
+            "label": "Manutencao Impressora",
+            "valor": -0.32,
+            "tipo": "custo"
+          },
+          {
+            "label": "Custo Energia",
+            "valor": -0.4,
+            "tipo": "custo"
+          },
+          {
+            "label": "Lucro Líquido",
+            "valor": 2.75,
+            "tipo": "resultado"
+          }
+        ]
+      }
+    ],
+    "capacidade": [
+      {
+        "tempoImpressaoMin": 200,
+        "lucroPorPeca": 4.13,
+        "lucroPorHora": 1.24,
+        "pecasPorDia": 6,
+        "lucroPorDia": 24.78,
+        "potencialMensal": 644.28,
+        "horasUteisConsideradas": 20,
+        "diasUteisConsiderados": 26,
+        "canalVenda": "DIRETA",
+        "canalLabel": "Venda direta"
+      },
+      {
+        "tempoImpressaoMin": 200,
+        "lucroPorPeca": 4.13,
+        "lucroPorHora": 1.24,
+        "pecasPorDia": 6,
+        "lucroPorDia": 24.78,
+        "potencialMensal": 644.28,
+        "horasUteisConsideradas": 20,
+        "diasUteisConsiderados": 26,
+        "canalVenda": "SHOPEE",
+        "canalLabel": "Shopee"
+      },
+      {
+        "tempoImpressaoMin": 200,
+        "lucroPorPeca": 4.13,
+        "lucroPorHora": 1.24,
+        "pecasPorDia": 6,
+        "lucroPorDia": 24.78,
+        "potencialMensal": 644.28,
+        "horasUteisConsideradas": 20,
+        "diasUteisConsiderados": 26,
+        "canalVenda": "MERCADOLIVRE",
+        "canalLabel": "Mercado Livre"
+      }
+    ]
+  },
+  {
+    "nome": "ml-preco-baixo",
+    "entrada": {
+      "precoKg": 60,
+      "pesoGramas": 3,
+      "quantidade": 1,
+      "tempoImpressaoMin": 8,
+      "precoCompraImpressora": 1800,
+      "vidaUtilHorasImpressora": 5000,
+      "custoManutencaoMes": 25,
+      "consumoKwh": 0.06,
+      "custoKwh": 0.85,
+      "itensProjeto": [],
+      "percentualFalha": 0,
+      "valorFrete": 0,
+      "perfil": "DEMANDA_PADRAO",
+      "ajusteMarkup": 1,
+      "impostoPercentual": 0,
+      "taxaPagamentoPercentual": 0,
+      "freteGratisShopee": false
+    },
+    "custoBase": {
+      "custoMaterial": 0.18,
+      "custoTempo": 0,
+      "custoEnergia": 0.01,
+      "custoAmortizacao": 0.05,
+      "amortizacaoHora": 0.36,
+      "custoManutencaoMes": 25,
+      "custoManutencaoPorHora": 0.05,
+      "custoManutencaoRateado": 0.01,
+      "precoCompraImpressora": 1800,
+      "vidaUtilHorasImpressora": 5000,
+      "custoFixoRateado": 0,
+      "custoTotalBase": 0.24,
+      "totalCustosFixosSelecionados": 0,
+      "custosFixosSelecionados": [],
+      "custoFixoPorHora": 0,
+      "horasFixasMensaisConsideradas": 520,
+      "totalAcessoriosEmbalagens": 0,
+      "acessoriosEmbalagens": [],
+      "materiais": [
+        {
+          "filamentoId": "x",
+          "nome": "Filamento",
+          "material": "PLA",
+          "cor": "-",
+          "precoKg": 60,
+          "pesoGramas": 3,
+          "custo": 0.18
+        }
+      ],
+      "nomeFilamento": "Filamento",
+      "precoKgFilamento": 60,
+      "pesoFilamentoGramas": 3,
+      "tempoFormatado": "8min",
+      "nomeImpressora": "Impressora",
+      "custoKwh": 0.85,
+      "consumoKwh": 0.06
+    },
+    "consumidor": [
+      {
+        "canalVenda": "DIRETA",
+        "canalLabel": "Venda direta",
+        "taxaMarket": 0,
+        "valorTaxaMarket": 0,
+        "taxaFixa": 0,
+        "taxaFixaTipo": "VALOR",
+        "taxaFixaPercentual": 0,
+        "taxaGatewayPercent": 0,
+        "valorTaxaGateway": 0,
+        "taxaGatewayFixa": 0,
+        "impostos": [],
+        "totalImpostosCanal": 0,
+        "markup": 1.6,
+        "impostoPercentual": 0,
+        "valorImposto": 0,
+        "taxaPagamentoPercentual": 0,
+        "valorTaxaPagamento": 0,
+        "precoVendaSemFalha": 0.38,
+        "precoVendaSemFrete": 0.38,
+        "valorFrete": 0,
+        "percentualFalha": 0,
+        "valorFalha": 0,
+        "precoVenda": 0.38,
+        "lucroLiquido": 0.14,
+        "totalTaxas": 0,
+        "percentualTaxas": 0,
+        "cascata": [
+          {
+            "label": "Preço de Venda",
+            "valor": 0.38,
+            "tipo": "receita"
+          },
+          {
+            "label": "Custo Material",
+            "valor": -0.18,
+            "tipo": "custo"
+          },
+          {
+            "label": "Amortizacao Impressora",
+            "valor": -0.05,
+            "tipo": "custo"
+          },
+          {
+            "label": "Manutencao Impressora",
+            "valor": -0.01,
+            "tipo": "custo"
+          },
+          {
+            "label": "Custo Energia",
+            "valor": -0.01,
+            "tipo": "custo"
+          },
+          {
+            "label": "Lucro Líquido",
+            "valor": 0.14,
+            "tipo": "resultado"
+          }
+        ]
+      },
+      {
+        "canalVenda": "SHOPEE",
+        "canalLabel": "Shopee",
+        "taxaMarket": 14,
+        "valorTaxaMarket": 0.71,
+        "taxaFixa": 4,
+        "taxaFixaTipo": "VALOR",
+        "taxaFixaPercentual": 0,
+        "taxaGatewayPercent": 0,
+        "valorTaxaGateway": 0,
+        "taxaGatewayFixa": 0,
+        "impostos": [],
+        "totalImpostosCanal": 0,
+        "markup": 1.6,
+        "impostoPercentual": 0,
+        "valorImposto": 0,
+        "taxaPagamentoPercentual": 0,
+        "valorTaxaPagamento": 0,
+        "precoVendaSemFalha": 5.1,
+        "precoVendaSemFrete": 5.1,
+        "valorFrete": 0,
+        "percentualFalha": 0,
+        "valorFalha": 0,
+        "precoVenda": 5.1,
+        "lucroLiquido": 0.15,
+        "totalTaxas": 4.71,
+        "percentualTaxas": 92.47,
+        "cascata": [
+          {
+            "label": "Preço de Venda",
+            "valor": 5.1,
+            "tipo": "receita"
+          },
+          {
+            "label": "Taxa Shopee (14%)",
+            "valor": -0.71,
+            "tipo": "deducao",
+            "percentual": 14
+          },
+          {
+            "label": "Taxa Fixa Shopee",
+            "valor": -4,
+            "tipo": "deducao"
+          },
+          {
+            "label": "Custo Material",
+            "valor": -0.18,
+            "tipo": "custo"
+          },
+          {
+            "label": "Amortizacao Impressora",
+            "valor": -0.05,
+            "tipo": "custo"
+          },
+          {
+            "label": "Manutencao Impressora",
+            "valor": -0.01,
+            "tipo": "custo"
+          },
+          {
+            "label": "Custo Energia",
+            "valor": -0.01,
+            "tipo": "custo"
+          },
+          {
+            "label": "Lucro Líquido",
+            "valor": 0.15,
+            "tipo": "resultado"
+          }
+        ]
+      },
+      {
+        "canalVenda": "MERCADOLIVRE",
+        "canalLabel": "Mercado Livre",
+        "taxaMarket": 16,
+        "valorTaxaMarket": 3.24,
+        "taxaFixa": 6.5,
+        "taxaFixaTipo": "VALOR",
+        "taxaFixaPercentual": 0,
+        "taxaGatewayPercent": 0,
+        "valorTaxaGateway": 0,
+        "taxaGatewayFixa": 0,
+        "impostos": [],
+        "totalImpostosCanal": 0,
+        "markup": 1.6,
+        "impostoPercentual": 0,
+        "valorImposto": 0,
+        "taxaPagamentoPercentual": 0,
+        "valorTaxaPagamento": 0,
+        "precoVendaSemFalha": 20.25,
+        "precoVendaSemFrete": 20.25,
+        "valorFrete": 0,
+        "percentualFalha": 0,
+        "valorFalha": 0,
+        "precoVenda": 20.25,
+        "lucroLiquido": 10.27,
+        "totalTaxas": 9.74,
+        "percentualTaxas": 48.1,
+        "cascata": [
+          {
+            "label": "Preço de Venda",
+            "valor": 20.25,
+            "tipo": "receita"
+          },
+          {
+            "label": "Taxa Mercado Livre (16%)",
+            "valor": -3.24,
+            "tipo": "deducao",
+            "percentual": 16
+          },
+          {
+            "label": "Taxa Fixa Mercado Livre",
+            "valor": -6.5,
+            "tipo": "deducao"
+          },
+          {
+            "label": "Custo Material",
+            "valor": -0.18,
+            "tipo": "custo"
+          },
+          {
+            "label": "Amortizacao Impressora",
+            "valor": -0.05,
+            "tipo": "custo"
+          },
+          {
+            "label": "Manutencao Impressora",
+            "valor": -0.01,
+            "tipo": "custo"
+          },
+          {
+            "label": "Custo Energia",
+            "valor": -0.01,
+            "tipo": "custo"
+          },
+          {
+            "label": "Lucro Líquido",
+            "valor": 10.27,
+            "tipo": "resultado"
+          }
+        ]
+      }
+    ],
+    "lojista": [
+      {
+        "canalVenda": "DIRETA",
+        "canalLabel": "Venda direta",
+        "taxaMarket": 0,
+        "valorTaxaMarket": 0,
+        "taxaFixa": 0,
+        "taxaFixaTipo": "VALOR",
+        "taxaFixaPercentual": 0,
+        "taxaGatewayPercent": 0,
+        "valorTaxaGateway": 0,
+        "taxaGatewayFixa": 0,
+        "impostos": [],
+        "totalImpostosCanal": 0,
+        "markup": 1.4,
+        "impostoPercentual": 0,
+        "valorImposto": 0,
+        "taxaPagamentoPercentual": 0,
+        "valorTaxaPagamento": 0,
+        "precoVendaSemFalha": 0.34,
+        "precoVendaSemFrete": 0.34,
+        "valorFrete": 0,
+        "percentualFalha": 0,
+        "valorFalha": 0,
+        "precoVenda": 0.34,
+        "lucroLiquido": 0.1,
+        "totalTaxas": 0,
+        "percentualTaxas": 0,
+        "cascata": [
+          {
+            "label": "Preço de Venda",
+            "valor": 0.34,
+            "tipo": "receita"
+          },
+          {
+            "label": "Custo Material",
+            "valor": -0.18,
+            "tipo": "custo"
+          },
+          {
+            "label": "Amortizacao Impressora",
+            "valor": -0.05,
+            "tipo": "custo"
+          },
+          {
+            "label": "Manutencao Impressora",
+            "valor": -0.01,
+            "tipo": "custo"
+          },
+          {
+            "label": "Custo Energia",
+            "valor": -0.01,
+            "tipo": "custo"
+          },
+          {
+            "label": "Lucro Líquido",
+            "valor": 0.1,
+            "tipo": "resultado"
+          }
+        ]
+      },
+      {
+        "canalVenda": "SHOPEE",
+        "canalLabel": "Shopee",
+        "taxaMarket": 14,
+        "valorTaxaMarket": 0.71,
+        "taxaFixa": 4,
+        "taxaFixaTipo": "VALOR",
+        "taxaFixaPercentual": 0,
+        "taxaGatewayPercent": 0,
+        "valorTaxaGateway": 0,
+        "taxaGatewayFixa": 0,
+        "impostos": [],
+        "totalImpostosCanal": 0,
+        "markup": 1.4,
+        "impostoPercentual": 0,
+        "valorImposto": 0,
+        "taxaPagamentoPercentual": 0,
+        "valorTaxaPagamento": 0,
+        "precoVendaSemFalha": 5.04,
+        "precoVendaSemFrete": 5.04,
+        "valorFrete": 0,
+        "percentualFalha": 0,
+        "valorFalha": 0,
+        "precoVenda": 5.04,
+        "lucroLiquido": 0.09,
+        "totalTaxas": 4.71,
+        "percentualTaxas": 93.34,
+        "cascata": [
+          {
+            "label": "Preço de Venda",
+            "valor": 5.04,
+            "tipo": "receita"
+          },
+          {
+            "label": "Taxa Shopee (14%)",
+            "valor": -0.71,
+            "tipo": "deducao",
+            "percentual": 14
+          },
+          {
+            "label": "Taxa Fixa Shopee",
+            "valor": -4,
+            "tipo": "deducao"
+          },
+          {
+            "label": "Custo Material",
+            "valor": -0.18,
+            "tipo": "custo"
+          },
+          {
+            "label": "Amortizacao Impressora",
+            "valor": -0.05,
+            "tipo": "custo"
+          },
+          {
+            "label": "Manutencao Impressora",
+            "valor": -0.01,
+            "tipo": "custo"
+          },
+          {
+            "label": "Custo Energia",
+            "valor": -0.01,
+            "tipo": "custo"
+          },
+          {
+            "label": "Lucro Líquido",
+            "valor": 0.09,
+            "tipo": "resultado"
+          }
+        ]
+      },
+      {
+        "canalVenda": "MERCADOLIVRE",
+        "canalLabel": "Mercado Livre",
+        "taxaMarket": 16,
+        "valorTaxaMarket": 3.22,
+        "taxaFixa": 6.5,
+        "taxaFixaTipo": "VALOR",
+        "taxaFixaPercentual": 0,
+        "taxaGatewayPercent": 0,
+        "valorTaxaGateway": 0,
+        "taxaGatewayFixa": 0,
+        "impostos": [],
+        "totalImpostosCanal": 0,
+        "markup": 1.4,
+        "impostoPercentual": 0,
+        "valorImposto": 0,
+        "taxaPagamentoPercentual": 0,
+        "valorTaxaPagamento": 0,
+        "precoVendaSemFalha": 20.11,
+        "precoVendaSemFrete": 20.11,
+        "valorFrete": 0,
+        "percentualFalha": 0,
+        "valorFalha": 0,
+        "precoVenda": 20.11,
+        "lucroLiquido": 10.15,
+        "totalTaxas": 9.72,
+        "percentualTaxas": 48.33,
+        "cascata": [
+          {
+            "label": "Preço de Venda",
+            "valor": 20.11,
+            "tipo": "receita"
+          },
+          {
+            "label": "Taxa Mercado Livre (16%)",
+            "valor": -3.22,
+            "tipo": "deducao",
+            "percentual": 16
+          },
+          {
+            "label": "Taxa Fixa Mercado Livre",
+            "valor": -6.5,
+            "tipo": "deducao"
+          },
+          {
+            "label": "Custo Material",
+            "valor": -0.18,
+            "tipo": "custo"
+          },
+          {
+            "label": "Amortizacao Impressora",
+            "valor": -0.05,
+            "tipo": "custo"
+          },
+          {
+            "label": "Manutencao Impressora",
+            "valor": -0.01,
+            "tipo": "custo"
+          },
+          {
+            "label": "Custo Energia",
+            "valor": -0.01,
+            "tipo": "custo"
+          },
+          {
+            "label": "Lucro Líquido",
+            "valor": 10.15,
+            "tipo": "resultado"
+          }
+        ]
+      }
+    ],
+    "capacidade": [
+      {
+        "tempoImpressaoMin": 8,
+        "lucroPorPeca": 0.14,
+        "lucroPorHora": 1.05,
+        "pecasPorDia": 150,
+        "lucroPorDia": 21,
+        "potencialMensal": 546,
+        "horasUteisConsideradas": 20,
+        "diasUteisConsiderados": 26,
+        "canalVenda": "DIRETA",
+        "canalLabel": "Venda direta"
+      },
+      {
+        "tempoImpressaoMin": 8,
+        "lucroPorPeca": 0.15,
+        "lucroPorHora": 1.13,
+        "pecasPorDia": 150,
+        "lucroPorDia": 22.5,
+        "potencialMensal": 585,
+        "horasUteisConsideradas": 20,
+        "diasUteisConsiderados": 26,
+        "canalVenda": "SHOPEE",
+        "canalLabel": "Shopee"
+      },
+      {
+        "tempoImpressaoMin": 8,
+        "lucroPorPeca": 10.27,
+        "lucroPorHora": 77.02,
+        "pecasPorDia": 150,
+        "lucroPorDia": 1540.5,
+        "potencialMensal": 40053,
+        "horasUteisConsideradas": 20,
+        "diasUteisConsiderados": 26,
+        "canalVenda": "MERCADOLIVRE",
+        "canalLabel": "Mercado Livre"
+      }
+    ]
+  },
+  {
+    "nome": "lote-com-falha-e-frete",
+    "entrada": {
+      "precoKg": 110,
+      "pesoGramas": 85,
+      "quantidade": 5,
+      "tempoImpressaoMin": 145,
+      "precoCompraImpressora": 3000,
+      "vidaUtilHorasImpressora": 6000,
+      "custoManutencaoMes": 30,
+      "consumoKwh": 0.12,
+      "custoKwh": 0.92,
+      "itensProjeto": [],
+      "percentualFalha": 8,
+      "valorFrete": 12,
+      "perfil": "DEMANDA_PADRAO",
+      "ajusteMarkup": 1,
+      "impostoPercentual": 0,
+      "taxaPagamentoPercentual": 0,
+      "freteGratisShopee": false
+    },
+    "custoBase": {
+      "custoMaterial": 46.75,
+      "custoTempo": 0,
+      "custoEnergia": 1.33,
+      "custoAmortizacao": 6.04,
+      "amortizacaoHora": 0.5,
+      "custoManutencaoMes": 30,
+      "custoManutencaoPorHora": 0.06,
+      "custoManutencaoRateado": 0.7,
+      "precoCompraImpressora": 3000,
+      "vidaUtilHorasImpressora": 6000,
+      "custoFixoRateado": 0,
+      "custoTotalBase": 54.82,
+      "totalCustosFixosSelecionados": 0,
+      "custosFixosSelecionados": [],
+      "custoFixoPorHora": 0,
+      "horasFixasMensaisConsideradas": 520,
+      "totalAcessoriosEmbalagens": 0,
+      "acessoriosEmbalagens": [],
+      "materiais": [
+        {
+          "filamentoId": "x",
+          "nome": "Filamento",
+          "material": "PLA",
+          "cor": "-",
+          "precoKg": 110,
+          "pesoGramas": 85,
+          "custo": 46.75
+        }
+      ],
+      "nomeFilamento": "Filamento",
+      "precoKgFilamento": 110,
+      "pesoFilamentoGramas": 85,
+      "tempoFormatado": "2h 25min",
+      "nomeImpressora": "Impressora",
+      "custoKwh": 0.92,
+      "consumoKwh": 0.12
+    },
+    "consumidor": [
+      {
+        "canalVenda": "DIRETA",
+        "canalLabel": "Venda direta",
+        "taxaMarket": 0,
+        "valorTaxaMarket": 0,
+        "taxaFixa": 0,
+        "taxaFixaTipo": "VALOR",
+        "taxaFixaPercentual": 0,
+        "taxaGatewayPercent": 0,
+        "valorTaxaGateway": 0,
+        "taxaGatewayFixa": 0,
+        "impostos": [],
+        "totalImpostosCanal": 0,
+        "markup": 1.6,
+        "impostoPercentual": 0,
+        "valorImposto": 0,
+        "taxaPagamentoPercentual": 0,
+        "valorTaxaPagamento": 0,
+        "precoVendaSemFalha": 87.71,
+        "precoVendaSemFrete": 91.45,
+        "valorFrete": 12,
+        "percentualFalha": 8,
+        "valorFalha": 3.74,
+        "precoVenda": 103.45,
+        "lucroLiquido": 32.89,
+        "totalTaxas": 0,
+        "percentualTaxas": 0,
+        "cascata": [
+          {
+            "label": "Preço de Venda",
+            "valor": 103.45,
+            "tipo": "receita"
+          },
+          {
+            "label": "Reserva Falha (8%)",
+            "valor": -3.74,
+            "tipo": "deducao",
+            "percentual": 8
+          },
+          {
+            "label": "Frete repassado",
+            "valor": -12,
+            "tipo": "custo"
+          },
+          {
+            "label": "Custo Material",
+            "valor": -46.75,
+            "tipo": "custo"
+          },
+          {
+            "label": "Amortizacao Impressora",
+            "valor": -6.04,
+            "tipo": "custo"
+          },
+          {
+            "label": "Manutencao Impressora",
+            "valor": -0.7,
+            "tipo": "custo"
+          },
+          {
+            "label": "Custo Energia",
+            "valor": -1.33,
+            "tipo": "custo"
+          },
+          {
+            "label": "Lucro Líquido",
+            "valor": 32.89,
+            "tipo": "resultado"
+          }
+        ]
+      },
+      {
+        "canalVenda": "SHOPEE",
+        "canalLabel": "Shopee",
+        "taxaMarket": 14,
+        "valorTaxaMarket": 17.49,
+        "taxaFixa": 4,
+        "taxaFixaTipo": "VALOR",
+        "taxaFixaPercentual": 0,
+        "taxaGatewayPercent": 0,
+        "valorTaxaGateway": 0,
+        "taxaGatewayFixa": 0,
+        "impostos": [],
+        "totalImpostosCanal": 0,
+        "markup": 1.6,
+        "impostoPercentual": 0,
+        "valorImposto": 0,
+        "taxaPagamentoPercentual": 0,
+        "valorTaxaPagamento": 0,
+        "precoVendaSemFalha": 106.64,
+        "precoVendaSemFrete": 110.99,
+        "valorFrete": 12,
+        "percentualFalha": 8,
+        "valorFalha": 3.74,
+        "precoVenda": 124.94,
+        "lucroLiquido": 32.89,
+        "totalTaxas": 21.49,
+        "percentualTaxas": 17.2,
+        "cascata": [
+          {
+            "label": "Preço de Venda",
+            "valor": 124.94,
+            "tipo": "receita"
+          },
+          {
+            "label": "Reserva Falha (8%)",
+            "valor": -3.74,
+            "tipo": "deducao",
+            "percentual": 8
+          },
+          {
+            "label": "Frete repassado",
+            "valor": -12,
+            "tipo": "custo"
+          },
+          {
+            "label": "Taxa Shopee (14%)",
+            "valor": -17.49,
+            "tipo": "deducao",
+            "percentual": 14
+          },
+          {
+            "label": "Taxa Fixa Shopee",
+            "valor": -4,
+            "tipo": "deducao"
+          },
+          {
+            "label": "Custo Material",
+            "valor": -46.75,
+            "tipo": "custo"
+          },
+          {
+            "label": "Amortizacao Impressora",
+            "valor": -6.04,
+            "tipo": "custo"
+          },
+          {
+            "label": "Manutencao Impressora",
+            "valor": -0.7,
+            "tipo": "custo"
+          },
+          {
+            "label": "Custo Energia",
+            "valor": -1.33,
+            "tipo": "custo"
+          },
+          {
+            "label": "Lucro Líquido",
+            "valor": 32.89,
+            "tipo": "resultado"
+          }
+        ]
+      },
+      {
+        "canalVenda": "MERCADOLIVRE",
+        "canalLabel": "Mercado Livre",
+        "taxaMarket": 16,
+        "valorTaxaMarket": 20.94,
+        "taxaFixa": 6.5,
+        "taxaFixaTipo": "VALOR",
+        "taxaFixaPercentual": 0,
+        "taxaGatewayPercent": 0,
+        "valorTaxaGateway": 0,
+        "taxaGatewayFixa": 0,
+        "impostos": [],
+        "totalImpostosCanal": 0,
+        "markup": 1.6,
+        "impostoPercentual": 0,
+        "valorImposto": 0,
+        "taxaPagamentoPercentual": 0,
+        "valorTaxaPagamento": 0,
+        "precoVendaSemFalha": 112.16,
+        "precoVendaSemFrete": 116.61,
+        "valorFrete": 12,
+        "percentualFalha": 8,
+        "valorFalha": 3.74,
+        "precoVenda": 130.9,
+        "lucroLiquido": 32.9,
+        "totalTaxas": 27.44,
+        "percentualTaxas": 20.97,
+        "cascata": [
+          {
+            "label": "Preço de Venda",
+            "valor": 130.9,
+            "tipo": "receita"
+          },
+          {
+            "label": "Reserva Falha (8%)",
+            "valor": -3.74,
+            "tipo": "deducao",
+            "percentual": 8
+          },
+          {
+            "label": "Frete repassado",
+            "valor": -12,
+            "tipo": "custo"
+          },
+          {
+            "label": "Taxa Mercado Livre (16%)",
+            "valor": -20.94,
+            "tipo": "deducao",
+            "percentual": 16
+          },
+          {
+            "label": "Taxa Fixa Mercado Livre",
+            "valor": -6.5,
+            "tipo": "deducao"
+          },
+          {
+            "label": "Custo Material",
+            "valor": -46.75,
+            "tipo": "custo"
+          },
+          {
+            "label": "Amortizacao Impressora",
+            "valor": -6.04,
+            "tipo": "custo"
+          },
+          {
+            "label": "Manutencao Impressora",
+            "valor": -0.7,
+            "tipo": "custo"
+          },
+          {
+            "label": "Custo Energia",
+            "valor": -1.33,
+            "tipo": "custo"
+          },
+          {
+            "label": "Lucro Líquido",
+            "valor": 32.9,
+            "tipo": "resultado"
+          }
+        ]
+      }
+    ],
+    "lojista": [
+      {
+        "canalVenda": "DIRETA",
+        "canalLabel": "Venda direta",
+        "taxaMarket": 0,
+        "valorTaxaMarket": 0,
+        "taxaFixa": 0,
+        "taxaFixaTipo": "VALOR",
+        "taxaFixaPercentual": 0,
+        "taxaGatewayPercent": 0,
+        "valorTaxaGateway": 0,
+        "taxaGatewayFixa": 0,
+        "impostos": [],
+        "totalImpostosCanal": 0,
+        "markup": 1.4,
+        "impostoPercentual": 0,
+        "valorImposto": 0,
+        "taxaPagamentoPercentual": 0,
+        "valorTaxaPagamento": 0,
+        "precoVendaSemFalha": 76.75,
+        "precoVendaSemFrete": 80.49,
+        "valorFrete": 12,
+        "percentualFalha": 8,
+        "valorFalha": 3.74,
+        "precoVenda": 92.49,
+        "lucroLiquido": 21.93,
+        "totalTaxas": 0,
+        "percentualTaxas": 0,
+        "cascata": [
+          {
+            "label": "Preço de Venda",
+            "valor": 92.49,
+            "tipo": "receita"
+          },
+          {
+            "label": "Reserva Falha (8%)",
+            "valor": -3.74,
+            "tipo": "deducao",
+            "percentual": 8
+          },
+          {
+            "label": "Frete repassado",
+            "valor": -12,
+            "tipo": "custo"
+          },
+          {
+            "label": "Custo Material",
+            "valor": -46.75,
+            "tipo": "custo"
+          },
+          {
+            "label": "Amortizacao Impressora",
+            "valor": -6.04,
+            "tipo": "custo"
+          },
+          {
+            "label": "Manutencao Impressora",
+            "valor": -0.7,
+            "tipo": "custo"
+          },
+          {
+            "label": "Custo Energia",
+            "valor": -1.33,
+            "tipo": "custo"
+          },
+          {
+            "label": "Lucro Líquido",
+            "valor": 21.93,
+            "tipo": "resultado"
+          }
+        ]
+      },
+      {
+        "canalVenda": "SHOPEE",
+        "canalLabel": "Shopee",
+        "taxaMarket": 14,
+        "valorTaxaMarket": 15.71,
+        "taxaFixa": 4,
+        "taxaFixaTipo": "VALOR",
+        "taxaFixaPercentual": 0,
+        "taxaGatewayPercent": 0,
+        "valorTaxaGateway": 0,
+        "taxaGatewayFixa": 0,
+        "impostos": [],
+        "totalImpostosCanal": 0,
+        "markup": 1.4,
+        "impostoPercentual": 0,
+        "valorImposto": 0,
+        "taxaPagamentoPercentual": 0,
+        "valorTaxaPagamento": 0,
+        "precoVendaSemFalha": 93.89,
+        "precoVendaSemFrete": 98.24,
+        "valorFrete": 12,
+        "percentualFalha": 8,
+        "valorFalha": 3.74,
+        "precoVenda": 112.2,
+        "lucroLiquido": 21.93,
+        "totalTaxas": 19.71,
+        "percentualTaxas": 17.57,
+        "cascata": [
+          {
+            "label": "Preço de Venda",
+            "valor": 112.2,
+            "tipo": "receita"
+          },
+          {
+            "label": "Reserva Falha (8%)",
+            "valor": -3.74,
+            "tipo": "deducao",
+            "percentual": 8
+          },
+          {
+            "label": "Frete repassado",
+            "valor": -12,
+            "tipo": "custo"
+          },
+          {
+            "label": "Taxa Shopee (14%)",
+            "valor": -15.71,
+            "tipo": "deducao",
+            "percentual": 14
+          },
+          {
+            "label": "Taxa Fixa Shopee",
+            "valor": -4,
+            "tipo": "deducao"
+          },
+          {
+            "label": "Custo Material",
+            "valor": -46.75,
+            "tipo": "custo"
+          },
+          {
+            "label": "Amortizacao Impressora",
+            "valor": -6.04,
+            "tipo": "custo"
+          },
+          {
+            "label": "Manutencao Impressora",
+            "valor": -0.7,
+            "tipo": "custo"
+          },
+          {
+            "label": "Custo Energia",
+            "valor": -1.33,
+            "tipo": "custo"
+          },
+          {
+            "label": "Lucro Líquido",
+            "valor": 21.93,
+            "tipo": "resultado"
+          }
+        ]
+      },
+      {
+        "canalVenda": "MERCADOLIVRE",
+        "canalLabel": "Mercado Livre",
+        "taxaMarket": 16,
+        "valorTaxaMarket": 18.85,
+        "taxaFixa": 6.5,
+        "taxaFixaTipo": "VALOR",
+        "taxaFixaPercentual": 0,
+        "taxaGatewayPercent": 0,
+        "valorTaxaGateway": 0,
+        "taxaGatewayFixa": 0,
+        "impostos": [],
+        "totalImpostosCanal": 0,
+        "markup": 1.4,
+        "impostoPercentual": 0,
+        "valorImposto": 0,
+        "taxaPagamentoPercentual": 0,
+        "valorTaxaPagamento": 0,
+        "precoVendaSemFalha": 99.1,
+        "precoVendaSemFrete": 103.56,
+        "valorFrete": 12,
+        "percentualFalha": 8,
+        "valorFalha": 3.74,
+        "precoVenda": 117.84,
+        "lucroLiquido": 21.93,
+        "totalTaxas": 25.35,
+        "percentualTaxas": 21.52,
+        "cascata": [
+          {
+            "label": "Preço de Venda",
+            "valor": 117.84,
+            "tipo": "receita"
+          },
+          {
+            "label": "Reserva Falha (8%)",
+            "valor": -3.74,
+            "tipo": "deducao",
+            "percentual": 8
+          },
+          {
+            "label": "Frete repassado",
+            "valor": -12,
+            "tipo": "custo"
+          },
+          {
+            "label": "Taxa Mercado Livre (16%)",
+            "valor": -18.85,
+            "tipo": "deducao",
+            "percentual": 16
+          },
+          {
+            "label": "Taxa Fixa Mercado Livre",
+            "valor": -6.5,
+            "tipo": "deducao"
+          },
+          {
+            "label": "Custo Material",
+            "valor": -46.75,
+            "tipo": "custo"
+          },
+          {
+            "label": "Amortizacao Impressora",
+            "valor": -6.04,
+            "tipo": "custo"
+          },
+          {
+            "label": "Manutencao Impressora",
+            "valor": -0.7,
+            "tipo": "custo"
+          },
+          {
+            "label": "Custo Energia",
+            "valor": -1.33,
+            "tipo": "custo"
+          },
+          {
+            "label": "Lucro Líquido",
+            "valor": 21.93,
+            "tipo": "resultado"
+          }
+        ]
+      }
+    ],
+    "capacidade": [
+      {
+        "tempoImpressaoMin": 145,
+        "lucroPorPeca": 6.58,
+        "lucroPorHora": 2.72,
+        "pecasPorDia": 8,
+        "lucroPorDia": 52.62,
+        "potencialMensal": 1368.22,
+        "horasUteisConsideradas": 20,
+        "diasUteisConsiderados": 26,
+        "canalVenda": "DIRETA",
+        "canalLabel": "Venda direta"
+      },
+      {
+        "tempoImpressaoMin": 145,
+        "lucroPorPeca": 6.58,
+        "lucroPorHora": 2.72,
+        "pecasPorDia": 8,
+        "lucroPorDia": 52.62,
+        "potencialMensal": 1368.22,
+        "horasUteisConsideradas": 20,
+        "diasUteisConsiderados": 26,
+        "canalVenda": "SHOPEE",
+        "canalLabel": "Shopee"
+      },
+      {
+        "tempoImpressaoMin": 145,
+        "lucroPorPeca": 6.58,
+        "lucroPorHora": 2.72,
+        "pecasPorDia": 8,
+        "lucroPorDia": 52.64,
+        "potencialMensal": 1368.64,
+        "horasUteisConsideradas": 20,
+        "diasUteisConsiderados": 26,
+        "canalVenda": "MERCADOLIVRE",
+        "canalLabel": "Mercado Livre"
+      }
+    ]
+  },
+  {
+    "nome": "exclusivo-com-impostos-e-projeto",
+    "entrada": {
+      "precoKg": 149.9,
+      "pesoGramas": 260,
+      "quantidade": 2,
+      "tempoImpressaoMin": 620,
+      "precoCompraImpressora": 9000,
+      "vidaUtilHorasImpressora": 8000,
+      "custoManutencaoMes": 80,
+      "consumoKwh": 0.16,
+      "custoKwh": 0.78,
+      "itensProjeto": [
+        {
+          "nome": "Caixa",
+          "valorUnitario": 3.4,
+          "quantidade": 2
+        },
+        {
+          "nome": "Ima",
+          "valorUnitario": 0.75,
+          "quantidade": 8
+        }
+      ],
+      "percentualFalha": 5,
+      "valorFrete": 24.9,
+      "perfil": "PROJETO_EXCLUSIVO",
+      "ajusteMarkup": 1.2,
+      "impostoPercentual": 6,
+      "taxaPagamentoPercentual": 3.99,
+      "freteGratisShopee": false
+    },
+    "custoBase": {
+      "custoMaterial": 77.95,
+      "custoTempo": 0,
+      "custoEnergia": 2.58,
+      "custoAmortizacao": 23.25,
+      "amortizacaoHora": 1.13,
+      "custoManutencaoMes": 80,
+      "custoManutencaoPorHora": 0.15,
+      "custoManutencaoRateado": 3.18,
+      "precoCompraImpressora": 9000,
+      "vidaUtilHorasImpressora": 8000,
+      "custoFixoRateado": 0,
+      "custoTotalBase": 119.76,
+      "totalCustosFixosSelecionados": 0,
+      "custosFixosSelecionados": [],
+      "custoFixoPorHora": 0,
+      "horasFixasMensaisConsideradas": 520,
+      "totalAcessoriosEmbalagens": 12.8,
+      "acessoriosEmbalagens": [
+        {
+          "nome": "Caixa",
+          "valorUnitario": 3.4,
+          "quantidade": 2,
+          "total": 6.8
+        },
+        {
+          "nome": "Ima",
+          "valorUnitario": 0.75,
+          "quantidade": 8,
+          "total": 6
+        }
+      ],
+      "materiais": [
+        {
+          "filamentoId": "x",
+          "nome": "Filamento",
+          "material": "PLA",
+          "cor": "-",
+          "precoKg": 149.9,
+          "pesoGramas": 260,
+          "custo": 77.95
+        }
+      ],
+      "nomeFilamento": "Filamento",
+      "precoKgFilamento": 149.9,
+      "pesoFilamentoGramas": 260,
+      "tempoFormatado": "10h 20min",
+      "nomeImpressora": "Impressora",
+      "custoKwh": 0.78,
+      "consumoKwh": 0.16
+    },
+    "consumidor": [
+      {
+        "canalVenda": "DIRETA",
+        "canalLabel": "Venda direta",
+        "taxaMarket": 0,
+        "valorTaxaMarket": 0,
+        "taxaFixa": 0,
+        "taxaFixaTipo": "VALOR",
+        "taxaFixaPercentual": 0,
+        "taxaGatewayPercent": 0,
+        "valorTaxaGateway": 0,
+        "taxaGatewayFixa": 0,
+        "impostos": [],
+        "totalImpostosCanal": 0,
+        "markup": 2.88,
+        "impostoPercentual": 6,
+        "valorImposto": 24.91,
+        "taxaPagamentoPercentual": 3.99,
+        "valorTaxaPagamento": 16.57,
+        "precoVendaSemFalha": 383.19,
+        "precoVendaSemFrete": 387.52,
+        "valorFrete": 24.9,
+        "percentualFalha": 5,
+        "valorFalha": 3.9,
+        "precoVenda": 415.19,
+        "lucroLiquido": 225.15,
+        "totalTaxas": 41.48,
+        "percentualTaxas": 9.99,
+        "cascata": [
+          {
+            "label": "Preço de Venda",
+            "valor": 415.19,
+            "tipo": "receita"
+          },
+          {
+            "label": "Reserva Falha (5%)",
+            "valor": -3.9,
+            "tipo": "deducao",
+            "percentual": 5
+          },
+          {
+            "label": "Frete repassado",
+            "valor": -24.9,
+            "tipo": "custo"
+          },
+          {
+            "label": "Imposto (6%)",
+            "valor": -24.91,
+            "tipo": "deducao",
+            "percentual": 6
+          },
+          {
+            "label": "Taxa de Pagamento (3.99%)",
+            "valor": -16.57,
+            "tipo": "deducao",
+            "percentual": 3.99
+          },
+          {
+            "label": "Custo Material",
+            "valor": -77.95,
+            "tipo": "custo"
+          },
+          {
+            "label": "Amortizacao Impressora",
+            "valor": -23.25,
+            "tipo": "custo"
+          },
+          {
+            "label": "Manutencao Impressora",
+            "valor": -3.18,
+            "tipo": "custo"
+          },
+          {
+            "label": "Custo Energia",
+            "valor": -2.58,
+            "tipo": "custo"
+          },
+          {
+            "label": "Acessorios e Embalagens",
+            "valor": -12.8,
+            "tipo": "custo"
+          },
+          {
+            "label": "Lucro Líquido",
+            "valor": 225.15,
+            "tipo": "resultado"
+          }
+        ]
+      },
+      {
+        "canalVenda": "SHOPEE",
+        "canalLabel": "Shopee",
+        "taxaMarket": 14,
+        "valorTaxaMarket": 69.57,
+        "taxaFixa": 4,
+        "taxaFixaTipo": "VALOR",
+        "taxaFixaPercentual": 0,
+        "taxaGatewayPercent": 0,
+        "valorTaxaGateway": 0,
+        "taxaGatewayFixa": 0,
+        "impostos": [],
+        "totalImpostosCanal": 0,
+        "markup": 2.88,
+        "impostoPercentual": 6,
+        "valorImposto": 29.82,
+        "taxaPagamentoPercentual": 3.99,
+        "valorTaxaPagamento": 19.83,
+        "precoVendaSemFalha": 459.03,
+        "precoVendaSemFrete": 464.16,
+        "valorFrete": 24.9,
+        "percentualFalha": 5,
+        "valorFalha": 3.9,
+        "precoVenda": 496.92,
+        "lucroLiquido": 225.15,
+        "totalTaxas": 123.21,
+        "percentualTaxas": 24.79,
+        "cascata": [
+          {
+            "label": "Preço de Venda",
+            "valor": 496.92,
+            "tipo": "receita"
+          },
+          {
+            "label": "Reserva Falha (5%)",
+            "valor": -3.9,
+            "tipo": "deducao",
+            "percentual": 5
+          },
+          {
+            "label": "Frete repassado",
+            "valor": -24.9,
+            "tipo": "custo"
+          },
+          {
+            "label": "Taxa Shopee (14%)",
+            "valor": -69.57,
+            "tipo": "deducao",
+            "percentual": 14
+          },
+          {
+            "label": "Taxa Fixa Shopee",
+            "valor": -4,
+            "tipo": "deducao"
+          },
+          {
+            "label": "Imposto (6%)",
+            "valor": -29.82,
+            "tipo": "deducao",
+            "percentual": 6
+          },
+          {
+            "label": "Taxa de Pagamento (3.99%)",
+            "valor": -19.83,
+            "tipo": "deducao",
+            "percentual": 3.99
+          },
+          {
+            "label": "Custo Material",
+            "valor": -77.95,
+            "tipo": "custo"
+          },
+          {
+            "label": "Amortizacao Impressora",
+            "valor": -23.25,
+            "tipo": "custo"
+          },
+          {
+            "label": "Manutencao Impressora",
+            "valor": -3.18,
+            "tipo": "custo"
+          },
+          {
+            "label": "Custo Energia",
+            "valor": -2.58,
+            "tipo": "custo"
+          },
+          {
+            "label": "Acessorios e Embalagens",
+            "valor": -12.8,
+            "tipo": "custo"
+          },
+          {
+            "label": "Lucro Líquido",
+            "valor": 225.15,
+            "tipo": "resultado"
+          }
+        ]
+      },
+      {
+        "canalVenda": "MERCADOLIVRE",
+        "canalLabel": "Mercado Livre",
+        "taxaMarket": 16,
+        "valorTaxaMarket": 82.2,
+        "taxaFixa": 6.5,
+        "taxaFixaTipo": "VALOR",
+        "taxaFixaPercentual": 0,
+        "taxaGatewayPercent": 0,
+        "valorTaxaGateway": 0,
+        "taxaGatewayFixa": 0,
+        "impostos": [],
+        "totalImpostosCanal": 0,
+        "markup": 2.88,
+        "impostoPercentual": 6,
+        "valorImposto": 30.82,
+        "taxaPagamentoPercentual": 3.99,
+        "valorTaxaPagamento": 20.5,
+        "precoVendaSemFalha": 474.81,
+        "precoVendaSemFrete": 480.08,
+        "valorFrete": 24.9,
+        "percentualFalha": 5,
+        "valorFalha": 3.9,
+        "precoVenda": 513.73,
+        "lucroLiquido": 225.15,
+        "totalTaxas": 140.02,
+        "percentualTaxas": 27.26,
+        "cascata": [
+          {
+            "label": "Preço de Venda",
+            "valor": 513.73,
+            "tipo": "receita"
+          },
+          {
+            "label": "Reserva Falha (5%)",
+            "valor": -3.9,
+            "tipo": "deducao",
+            "percentual": 5
+          },
+          {
+            "label": "Frete repassado",
+            "valor": -24.9,
+            "tipo": "custo"
+          },
+          {
+            "label": "Taxa Mercado Livre (16%)",
+            "valor": -82.2,
+            "tipo": "deducao",
+            "percentual": 16
+          },
+          {
+            "label": "Taxa Fixa Mercado Livre",
+            "valor": -6.5,
+            "tipo": "deducao"
+          },
+          {
+            "label": "Imposto (6%)",
+            "valor": -30.82,
+            "tipo": "deducao",
+            "percentual": 6
+          },
+          {
+            "label": "Taxa de Pagamento (3.99%)",
+            "valor": -20.5,
+            "tipo": "deducao",
+            "percentual": 3.99
+          },
+          {
+            "label": "Custo Material",
+            "valor": -77.95,
+            "tipo": "custo"
+          },
+          {
+            "label": "Amortizacao Impressora",
+            "valor": -23.25,
+            "tipo": "custo"
+          },
+          {
+            "label": "Manutencao Impressora",
+            "valor": -3.18,
+            "tipo": "custo"
+          },
+          {
+            "label": "Custo Energia",
+            "valor": -2.58,
+            "tipo": "custo"
+          },
+          {
+            "label": "Acessorios e Embalagens",
+            "valor": -12.8,
+            "tipo": "custo"
+          },
+          {
+            "label": "Lucro Líquido",
+            "valor": 225.15,
+            "tipo": "resultado"
+          }
+        ]
+      }
+    ],
+    "lojista": [
+      {
+        "canalVenda": "DIRETA",
+        "canalLabel": "Venda direta",
+        "taxaMarket": 0,
+        "valorTaxaMarket": 0,
+        "taxaFixa": 0,
+        "taxaFixaTipo": "VALOR",
+        "taxaFixaPercentual": 0,
+        "taxaGatewayPercent": 0,
+        "valorTaxaGateway": 0,
+        "taxaGatewayFixa": 0,
+        "impostos": [],
+        "totalImpostosCanal": 0,
+        "markup": 2.4,
+        "impostoPercentual": 6,
+        "valorImposto": 21.08,
+        "taxaPagamentoPercentual": 3.99,
+        "valorTaxaPagamento": 14.02,
+        "precoVendaSemFalha": 319.32,
+        "precoVendaSemFrete": 323.66,
+        "valorFrete": 24.9,
+        "percentualFalha": 5,
+        "valorFalha": 3.9,
+        "precoVenda": 351.32,
+        "lucroLiquido": 167.66,
+        "totalTaxas": 35.1,
+        "percentualTaxas": 9.99,
+        "cascata": [
+          {
+            "label": "Preço de Venda",
+            "valor": 351.32,
+            "tipo": "receita"
+          },
+          {
+            "label": "Reserva Falha (5%)",
+            "valor": -3.9,
+            "tipo": "deducao",
+            "percentual": 5
+          },
+          {
+            "label": "Frete repassado",
+            "valor": -24.9,
+            "tipo": "custo"
+          },
+          {
+            "label": "Imposto (6%)",
+            "valor": -21.08,
+            "tipo": "deducao",
+            "percentual": 6
+          },
+          {
+            "label": "Taxa de Pagamento (3.99%)",
+            "valor": -14.02,
+            "tipo": "deducao",
+            "percentual": 3.99
+          },
+          {
+            "label": "Custo Material",
+            "valor": -77.95,
+            "tipo": "custo"
+          },
+          {
+            "label": "Amortizacao Impressora",
+            "valor": -23.25,
+            "tipo": "custo"
+          },
+          {
+            "label": "Manutencao Impressora",
+            "valor": -3.18,
+            "tipo": "custo"
+          },
+          {
+            "label": "Custo Energia",
+            "valor": -2.58,
+            "tipo": "custo"
+          },
+          {
+            "label": "Acessorios e Embalagens",
+            "valor": -12.8,
+            "tipo": "custo"
+          },
+          {
+            "label": "Lucro Líquido",
+            "valor": 167.66,
+            "tipo": "resultado"
+          }
+        ]
+      },
+      {
+        "canalVenda": "SHOPEE",
+        "canalLabel": "Shopee",
+        "taxaMarket": 14,
+        "valorTaxaMarket": 58.98,
+        "taxaFixa": 4,
+        "taxaFixaTipo": "VALOR",
+        "taxaFixaPercentual": 0,
+        "taxaGatewayPercent": 0,
+        "valorTaxaGateway": 0,
+        "taxaGatewayFixa": 0,
+        "impostos": [],
+        "totalImpostosCanal": 0,
+        "markup": 2.4,
+        "impostoPercentual": 6,
+        "valorImposto": 25.28,
+        "taxaPagamentoPercentual": 3.99,
+        "valorTaxaPagamento": 16.81,
+        "precoVendaSemFalha": 383.4,
+        "precoVendaSemFrete": 388.53,
+        "valorFrete": 24.9,
+        "percentualFalha": 5,
+        "valorFalha": 3.9,
+        "precoVenda": 421.29,
+        "lucroLiquido": 167.66,
+        "totalTaxas": 105.07,
+        "percentualTaxas": 24.94,
+        "cascata": [
+          {
+            "label": "Preço de Venda",
+            "valor": 421.29,
+            "tipo": "receita"
+          },
+          {
+            "label": "Reserva Falha (5%)",
+            "valor": -3.9,
+            "tipo": "deducao",
+            "percentual": 5
+          },
+          {
+            "label": "Frete repassado",
+            "valor": -24.9,
+            "tipo": "custo"
+          },
+          {
+            "label": "Taxa Shopee (14%)",
+            "valor": -58.98,
+            "tipo": "deducao",
+            "percentual": 14
+          },
+          {
+            "label": "Taxa Fixa Shopee",
+            "valor": -4,
+            "tipo": "deducao"
+          },
+          {
+            "label": "Imposto (6%)",
+            "valor": -25.28,
+            "tipo": "deducao",
+            "percentual": 6
+          },
+          {
+            "label": "Taxa de Pagamento (3.99%)",
+            "valor": -16.81,
+            "tipo": "deducao",
+            "percentual": 3.99
+          },
+          {
+            "label": "Custo Material",
+            "valor": -77.95,
+            "tipo": "custo"
+          },
+          {
+            "label": "Amortizacao Impressora",
+            "valor": -23.25,
+            "tipo": "custo"
+          },
+          {
+            "label": "Manutencao Impressora",
+            "valor": -3.18,
+            "tipo": "custo"
+          },
+          {
+            "label": "Custo Energia",
+            "valor": -2.58,
+            "tipo": "custo"
+          },
+          {
+            "label": "Acessorios e Embalagens",
+            "valor": -12.8,
+            "tipo": "custo"
+          },
+          {
+            "label": "Lucro Líquido",
+            "valor": 167.66,
+            "tipo": "resultado"
+          }
+        ]
+      },
+      {
+        "canalVenda": "MERCADOLIVRE",
+        "canalLabel": "Mercado Livre",
+        "taxaMarket": 16,
+        "valorTaxaMarket": 69.77,
+        "taxaFixa": 6.5,
+        "taxaFixaTipo": "VALOR",
+        "taxaFixaPercentual": 0,
+        "taxaGatewayPercent": 0,
+        "valorTaxaGateway": 0,
+        "taxaGatewayFixa": 0,
+        "impostos": [],
+        "totalImpostosCanal": 0,
+        "markup": 2.4,
+        "impostoPercentual": 6,
+        "valorImposto": 26.16,
+        "taxaPagamentoPercentual": 3.99,
+        "valorTaxaPagamento": 17.4,
+        "precoVendaSemFalha": 397.14,
+        "precoVendaSemFrete": 402.41,
+        "valorFrete": 24.9,
+        "percentualFalha": 5,
+        "valorFalha": 3.9,
+        "precoVenda": 436.05,
+        "lucroLiquido": 167.66,
+        "totalTaxas": 119.83,
+        "percentualTaxas": 27.48,
+        "cascata": [
+          {
+            "label": "Preço de Venda",
+            "valor": 436.05,
+            "tipo": "receita"
+          },
+          {
+            "label": "Reserva Falha (5%)",
+            "valor": -3.9,
+            "tipo": "deducao",
+            "percentual": 5
+          },
+          {
+            "label": "Frete repassado",
+            "valor": -24.9,
+            "tipo": "custo"
+          },
+          {
+            "label": "Taxa Mercado Livre (16%)",
+            "valor": -69.77,
+            "tipo": "deducao",
+            "percentual": 16
+          },
+          {
+            "label": "Taxa Fixa Mercado Livre",
+            "valor": -6.5,
+            "tipo": "deducao"
+          },
+          {
+            "label": "Imposto (6%)",
+            "valor": -26.16,
+            "tipo": "deducao",
+            "percentual": 6
+          },
+          {
+            "label": "Taxa de Pagamento (3.99%)",
+            "valor": -17.4,
+            "tipo": "deducao",
+            "percentual": 3.99
+          },
+          {
+            "label": "Custo Material",
+            "valor": -77.95,
+            "tipo": "custo"
+          },
+          {
+            "label": "Amortizacao Impressora",
+            "valor": -23.25,
+            "tipo": "custo"
+          },
+          {
+            "label": "Manutencao Impressora",
+            "valor": -3.18,
+            "tipo": "custo"
+          },
+          {
+            "label": "Custo Energia",
+            "valor": -2.58,
+            "tipo": "custo"
+          },
+          {
+            "label": "Acessorios e Embalagens",
+            "valor": -12.8,
+            "tipo": "custo"
+          },
+          {
+            "label": "Lucro Líquido",
+            "valor": 167.66,
+            "tipo": "resultado"
+          }
+        ]
+      }
+    ],
+    "capacidade": [
+      {
+        "tempoImpressaoMin": 620,
+        "lucroPorPeca": 112.58,
+        "lucroPorHora": 10.89,
+        "pecasPorDia": 1,
+        "lucroPorDia": 112.58,
+        "potencialMensal": 2926.95,
+        "horasUteisConsideradas": 20,
+        "diasUteisConsiderados": 26,
+        "canalVenda": "DIRETA",
+        "canalLabel": "Venda direta"
+      },
+      {
+        "tempoImpressaoMin": 620,
+        "lucroPorPeca": 112.58,
+        "lucroPorHora": 10.89,
+        "pecasPorDia": 1,
+        "lucroPorDia": 112.58,
+        "potencialMensal": 2926.95,
+        "horasUteisConsideradas": 20,
+        "diasUteisConsiderados": 26,
+        "canalVenda": "SHOPEE",
+        "canalLabel": "Shopee"
+      },
+      {
+        "tempoImpressaoMin": 620,
+        "lucroPorPeca": 112.58,
+        "lucroPorHora": 10.89,
+        "pecasPorDia": 1,
+        "lucroPorDia": 112.58,
+        "potencialMensal": 2926.95,
+        "horasUteisConsideradas": 20,
+        "diasUteisConsiderados": 26,
+        "canalVenda": "MERCADOLIVRE",
+        "canalLabel": "Mercado Livre"
+      }
+    ]
+  },
+  {
+    "nome": "sazonal-sem-impressora",
+    "entrada": {
+      "precoKg": 89.9,
+      "pesoGramas": 30,
+      "quantidade": 1,
+      "tempoImpressaoMin": 90,
+      "precoCompraImpressora": 0,
+      "vidaUtilHorasImpressora": 0,
+      "custoManutencaoMes": 0,
+      "consumoKwh": 0.1,
+      "custoKwh": 0.85,
+      "itensProjeto": [],
+      "percentualFalha": 0,
+      "valorFrete": 0,
+      "perfil": "SAZONAL",
+      "ajusteMarkup": 1,
+      "impostoPercentual": 0,
+      "taxaPagamentoPercentual": 0,
+      "freteGratisShopee": false
+    },
+    "custoBase": {
+      "custoMaterial": 2.7,
+      "custoTempo": 0,
+      "custoEnergia": 0.13,
+      "custoAmortizacao": 0,
+      "amortizacaoHora": 0,
+      "custoManutencaoMes": 0,
+      "custoManutencaoPorHora": 0,
+      "custoManutencaoRateado": 0,
+      "precoCompraImpressora": 0,
+      "vidaUtilHorasImpressora": 0,
+      "custoFixoRateado": 0,
+      "custoTotalBase": 2.83,
+      "totalCustosFixosSelecionados": 0,
+      "custosFixosSelecionados": [],
+      "custoFixoPorHora": 0,
+      "horasFixasMensaisConsideradas": 520,
+      "totalAcessoriosEmbalagens": 0,
+      "acessoriosEmbalagens": [],
+      "materiais": [
+        {
+          "filamentoId": "x",
+          "nome": "Filamento",
+          "material": "PLA",
+          "cor": "-",
+          "precoKg": 89.9,
+          "pesoGramas": 30,
+          "custo": 2.7
+        }
+      ],
+      "nomeFilamento": "Filamento",
+      "precoKgFilamento": 89.9,
+      "pesoFilamentoGramas": 30,
+      "tempoFormatado": "1h 30min",
+      "nomeImpressora": "Impressora",
+      "custoKwh": 0.85,
+      "consumoKwh": 0.1
+    },
+    "consumidor": [
+      {
+        "canalVenda": "DIRETA",
+        "canalLabel": "Venda direta",
+        "taxaMarket": 0,
+        "valorTaxaMarket": 0,
+        "taxaFixa": 0,
+        "taxaFixaTipo": "VALOR",
+        "taxaFixaPercentual": 0,
+        "taxaGatewayPercent": 0,
+        "valorTaxaGateway": 0,
+        "taxaGatewayFixa": 0,
+        "impostos": [],
+        "totalImpostosCanal": 0,
+        "markup": 2,
+        "impostoPercentual": 0,
+        "valorImposto": 0,
+        "taxaPagamentoPercentual": 0,
+        "valorTaxaPagamento": 0,
+        "precoVendaSemFalha": 5.66,
+        "precoVendaSemFrete": 5.66,
+        "valorFrete": 0,
+        "percentualFalha": 0,
+        "valorFalha": 0,
+        "precoVenda": 5.66,
+        "lucroLiquido": 2.83,
+        "totalTaxas": 0,
+        "percentualTaxas": 0,
+        "cascata": [
+          {
+            "label": "Preço de Venda",
+            "valor": 5.66,
+            "tipo": "receita"
+          },
+          {
+            "label": "Custo Material",
+            "valor": -2.7,
+            "tipo": "custo"
+          },
+          {
+            "label": "Custo Energia",
+            "valor": -0.13,
+            "tipo": "custo"
+          },
+          {
+            "label": "Lucro Líquido",
+            "valor": 2.83,
+            "tipo": "resultado"
+          }
+        ]
+      },
+      {
+        "canalVenda": "SHOPEE",
+        "canalLabel": "Shopee",
+        "taxaMarket": 14,
+        "valorTaxaMarket": 1.57,
+        "taxaFixa": 4,
+        "taxaFixaTipo": "VALOR",
+        "taxaFixaPercentual": 0,
+        "taxaGatewayPercent": 0,
+        "valorTaxaGateway": 0,
+        "taxaGatewayFixa": 0,
+        "impostos": [],
+        "totalImpostosCanal": 0,
+        "markup": 2,
+        "impostoPercentual": 0,
+        "valorImposto": 0,
+        "taxaPagamentoPercentual": 0,
+        "valorTaxaPagamento": 0,
+        "precoVendaSemFalha": 11.23,
+        "precoVendaSemFrete": 11.23,
+        "valorFrete": 0,
+        "percentualFalha": 0,
+        "valorFalha": 0,
+        "precoVenda": 11.23,
+        "lucroLiquido": 2.83,
+        "totalTaxas": 5.57,
+        "percentualTaxas": 49.61,
+        "cascata": [
+          {
+            "label": "Preço de Venda",
+            "valor": 11.23,
+            "tipo": "receita"
+          },
+          {
+            "label": "Taxa Shopee (14%)",
+            "valor": -1.57,
+            "tipo": "deducao",
+            "percentual": 14
+          },
+          {
+            "label": "Taxa Fixa Shopee",
+            "valor": -4,
+            "tipo": "deducao"
+          },
+          {
+            "label": "Custo Material",
+            "valor": -2.7,
+            "tipo": "custo"
+          },
+          {
+            "label": "Custo Energia",
+            "valor": -0.13,
+            "tipo": "custo"
+          },
+          {
+            "label": "Lucro Líquido",
+            "valor": 2.83,
+            "tipo": "resultado"
+          }
+        ]
+      },
+      {
+        "canalVenda": "MERCADOLIVRE",
+        "canalLabel": "Mercado Livre",
+        "taxaMarket": 16,
+        "valorTaxaMarket": 2.32,
+        "taxaFixa": 6.5,
+        "taxaFixaTipo": "VALOR",
+        "taxaFixaPercentual": 0,
+        "taxaGatewayPercent": 0,
+        "valorTaxaGateway": 0,
+        "taxaGatewayFixa": 0,
+        "impostos": [],
+        "totalImpostosCanal": 0,
+        "markup": 2,
+        "impostoPercentual": 0,
+        "valorImposto": 0,
+        "taxaPagamentoPercentual": 0,
+        "valorTaxaPagamento": 0,
+        "precoVendaSemFalha": 14.48,
+        "precoVendaSemFrete": 14.48,
+        "valorFrete": 0,
+        "percentualFalha": 0,
+        "valorFalha": 0,
+        "precoVenda": 14.48,
+        "lucroLiquido": 2.83,
+        "totalTaxas": 8.82,
+        "percentualTaxas": 60.9,
+        "cascata": [
+          {
+            "label": "Preço de Venda",
+            "valor": 14.48,
+            "tipo": "receita"
+          },
+          {
+            "label": "Taxa Mercado Livre (16%)",
+            "valor": -2.32,
+            "tipo": "deducao",
+            "percentual": 16
+          },
+          {
+            "label": "Taxa Fixa Mercado Livre",
+            "valor": -6.5,
+            "tipo": "deducao"
+          },
+          {
+            "label": "Custo Material",
+            "valor": -2.7,
+            "tipo": "custo"
+          },
+          {
+            "label": "Custo Energia",
+            "valor": -0.13,
+            "tipo": "custo"
+          },
+          {
+            "label": "Lucro Líquido",
+            "valor": 2.83,
+            "tipo": "resultado"
+          }
+        ]
+      }
+    ],
+    "lojista": [
+      {
+        "canalVenda": "DIRETA",
+        "canalLabel": "Venda direta",
+        "taxaMarket": 0,
+        "valorTaxaMarket": 0,
+        "taxaFixa": 0,
+        "taxaFixaTipo": "VALOR",
+        "taxaFixaPercentual": 0,
+        "taxaGatewayPercent": 0,
+        "valorTaxaGateway": 0,
+        "taxaGatewayFixa": 0,
+        "impostos": [],
+        "totalImpostosCanal": 0,
+        "markup": 1.6,
+        "impostoPercentual": 0,
+        "valorImposto": 0,
+        "taxaPagamentoPercentual": 0,
+        "valorTaxaPagamento": 0,
+        "precoVendaSemFalha": 4.53,
+        "precoVendaSemFrete": 4.53,
+        "valorFrete": 0,
+        "percentualFalha": 0,
+        "valorFalha": 0,
+        "precoVenda": 4.53,
+        "lucroLiquido": 1.7,
+        "totalTaxas": 0,
+        "percentualTaxas": 0,
+        "cascata": [
+          {
+            "label": "Preço de Venda",
+            "valor": 4.53,
+            "tipo": "receita"
+          },
+          {
+            "label": "Custo Material",
+            "valor": -2.7,
+            "tipo": "custo"
+          },
+          {
+            "label": "Custo Energia",
+            "valor": -0.13,
+            "tipo": "custo"
+          },
+          {
+            "label": "Lucro Líquido",
+            "valor": 1.7,
+            "tipo": "resultado"
+          }
+        ]
+      },
+      {
+        "canalVenda": "SHOPEE",
+        "canalLabel": "Shopee",
+        "taxaMarket": 14,
+        "valorTaxaMarket": 1.39,
+        "taxaFixa": 4,
+        "taxaFixaTipo": "VALOR",
+        "taxaFixaPercentual": 0,
+        "taxaGatewayPercent": 0,
+        "valorTaxaGateway": 0,
+        "taxaGatewayFixa": 0,
+        "impostos": [],
+        "totalImpostosCanal": 0,
+        "markup": 1.6,
+        "impostoPercentual": 0,
+        "valorImposto": 0,
+        "taxaPagamentoPercentual": 0,
+        "valorTaxaPagamento": 0,
+        "precoVendaSemFalha": 9.92,
+        "precoVendaSemFrete": 9.92,
+        "valorFrete": 0,
+        "percentualFalha": 0,
+        "valorFalha": 0,
+        "precoVenda": 9.92,
+        "lucroLiquido": 1.7,
+        "totalTaxas": 5.39,
+        "percentualTaxas": 54.34,
+        "cascata": [
+          {
+            "label": "Preço de Venda",
+            "valor": 9.92,
+            "tipo": "receita"
+          },
+          {
+            "label": "Taxa Shopee (14%)",
+            "valor": -1.39,
+            "tipo": "deducao",
+            "percentual": 14
+          },
+          {
+            "label": "Taxa Fixa Shopee",
+            "valor": -4,
+            "tipo": "deducao"
+          },
+          {
+            "label": "Custo Material",
+            "valor": -2.7,
+            "tipo": "custo"
+          },
+          {
+            "label": "Custo Energia",
+            "valor": -0.13,
+            "tipo": "custo"
+          },
+          {
+            "label": "Lucro Líquido",
+            "valor": 1.7,
+            "tipo": "resultado"
+          }
+        ]
+      },
+      {
+        "canalVenda": "MERCADOLIVRE",
+        "canalLabel": "Mercado Livre",
+        "taxaMarket": 16,
+        "valorTaxaMarket": 2.1,
+        "taxaFixa": 6.5,
+        "taxaFixaTipo": "VALOR",
+        "taxaFixaPercentual": 0,
+        "taxaGatewayPercent": 0,
+        "valorTaxaGateway": 0,
+        "taxaGatewayFixa": 0,
+        "impostos": [],
+        "totalImpostosCanal": 0,
+        "markup": 1.6,
+        "impostoPercentual": 0,
+        "valorImposto": 0,
+        "taxaPagamentoPercentual": 0,
+        "valorTaxaPagamento": 0,
+        "precoVendaSemFalha": 13.13,
+        "precoVendaSemFrete": 13.13,
+        "valorFrete": 0,
+        "percentualFalha": 0,
+        "valorFalha": 0,
+        "precoVenda": 13.13,
+        "lucroLiquido": 1.7,
+        "totalTaxas": 8.6,
+        "percentualTaxas": 65.51,
+        "cascata": [
+          {
+            "label": "Preço de Venda",
+            "valor": 13.13,
+            "tipo": "receita"
+          },
+          {
+            "label": "Taxa Mercado Livre (16%)",
+            "valor": -2.1,
+            "tipo": "deducao",
+            "percentual": 16
+          },
+          {
+            "label": "Taxa Fixa Mercado Livre",
+            "valor": -6.5,
+            "tipo": "deducao"
+          },
+          {
+            "label": "Custo Material",
+            "valor": -2.7,
+            "tipo": "custo"
+          },
+          {
+            "label": "Custo Energia",
+            "valor": -0.13,
+            "tipo": "custo"
+          },
+          {
+            "label": "Lucro Líquido",
+            "valor": 1.7,
+            "tipo": "resultado"
+          }
+        ]
+      }
+    ],
+    "capacidade": [
+      {
+        "tempoImpressaoMin": 90,
+        "lucroPorPeca": 2.83,
+        "lucroPorHora": 1.89,
+        "pecasPorDia": 13,
+        "lucroPorDia": 36.79,
+        "potencialMensal": 956.54,
+        "horasUteisConsideradas": 20,
+        "diasUteisConsiderados": 26,
+        "canalVenda": "DIRETA",
+        "canalLabel": "Venda direta"
+      },
+      {
+        "tempoImpressaoMin": 90,
+        "lucroPorPeca": 2.83,
+        "lucroPorHora": 1.89,
+        "pecasPorDia": 13,
+        "lucroPorDia": 36.79,
+        "potencialMensal": 956.54,
+        "horasUteisConsideradas": 20,
+        "diasUteisConsiderados": 26,
+        "canalVenda": "SHOPEE",
+        "canalLabel": "Shopee"
+      },
+      {
+        "tempoImpressaoMin": 90,
+        "lucroPorPeca": 2.83,
+        "lucroPorHora": 1.89,
+        "pecasPorDia": 13,
+        "lucroPorDia": 36.79,
+        "potencialMensal": 956.54,
+        "horasUteisConsideradas": 20,
+        "diasUteisConsiderados": 26,
+        "canalVenda": "MERCADOLIVRE",
+        "canalLabel": "Mercado Livre"
+      }
+    ]
+  }
+]
