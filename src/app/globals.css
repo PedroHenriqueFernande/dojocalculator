@@ -1,1 +1,90 @@
 @import "tailwindcss";
+
+@theme {
+  --color-papel: #FFFFFF;
+  --color-tinta: #100E0D;
+  --color-tinta-2: #5C5651;
+  --color-tinta-3: #6E675F;
+  --color-superficie: #F5F3F1;
+  --color-vermelho: #D01B2E;
+  --color-vermelho-2: #A81523;
+
+  --radius-campo: 2px;
+  --radius-painel: 3px;
+
+  --font-display: var(--fonte-display), Georgia, serif;
+  --font-sans: var(--fonte-sans), system-ui, sans-serif;
+  --font-mono: var(--fonte-mono), ui-monospace, monospace;
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+
+  body {
+    background: var(--color-papel);
+    color: var(--color-tinta);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Todo valor em coluna ou campo alinha na vírgula. */
+  input,
+  .numero {
+    font-variant-numeric: tabular-nums;
+  }
+
+  ::selection {
+    background: var(--color-vermelho);
+    color: var(--color-papel);
+  }
+}
+
+@layer components {
+  /*
+   * A direção visual é barulhenta por natureza: sombra sólida deslocada em
+   * todo bloco faz cada elemento gritar no mesmo volume e destrói a
+   * hierarquia. A regra é a sombra ser proporcional ao nível:
+   *   painel de primeiro nível  → 4px  (dois ou três por tela)
+   *   card de canal             → 3px
+   *   qualquer coisa aninhada   → nenhuma
+   * Ver spec, seção 8.2.
+   */
+  .painel {
+    background: var(--color-papel);
+    border: 1.5px solid var(--color-tinta);
+    border-radius: var(--radius-painel);
+    box-shadow: 4px 4px 0 var(--color-tinta);
+  }
+
+  .card-canal {
+    background: var(--color-papel);
+    border: 1.5px solid var(--color-tinta);
+    border-radius: var(--radius-painel);
+    box-shadow: 3px 3px 0 var(--color-tinta);
+  }
+
+  .titulo-painel {
+    font-weight: 700;
+    font-size: 0.5625rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+  }
+
+  .rotulo {
+    display: block;
+    font-size: 0.6875rem;
+    color: var(--color-tinta-2);
+    margin-bottom: 0.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
