@@ -41,7 +41,8 @@ export function Cabecalho() {
   return (
     <header className="mb-6 grid grid-cols-[1fr_auto_1fr] items-center border-b-2 border-tinta pb-3">
       <h1 className="font-display text-lg font-bold tracking-tight">
-        DOJO PANDA <span className="text-vermelho">・</span> 3D
+        DOJO <span className="text-vermelho">PANDA</span>{' '}
+        <span className="text-tinta-3">・</span> Calculator
       </h1>
 
       <MarcaDojoPanda className="h-[50px] w-auto justify-self-center" />
