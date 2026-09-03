@@ -18,8 +18,12 @@ function entradaDoCenario(cenario: (typeof ouro)[number]): EntradaCalculo {
   ];
 
   return {
-    precoKg: cenario.entrada.precoKg,
-    pesoGramas: cenario.entrada.pesoGramas,
+    filamentos: [
+      {
+        precoKg: cenario.entrada.precoKg,
+        pesoGramas: cenario.entrada.pesoGramas,
+      },
+    ],
     quantidade: cenario.entrada.quantidade,
     tempoImpressaoMin: cenario.entrada.tempoImpressaoMin,
     precoCompraImpressora: cenario.entrada.precoCompraImpressora,

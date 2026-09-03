@@ -16,8 +16,12 @@ describe('calcularCustoBase', () => {
     'reproduz o custo base do cenário %s',
     (_nome, cenario) => {
       const resultado = calcularCustoBase({
-        precoKg: cenario.entrada.precoKg,
-        pesoGramas: cenario.entrada.pesoGramas,
+        filamentos: [
+          {
+            precoKg: cenario.entrada.precoKg,
+            pesoGramas: cenario.entrada.pesoGramas,
+          },
+        ],
         quantidade: cenario.entrada.quantidade,
         tempoImpressaoMin: cenario.entrada.tempoImpressaoMin,
         precoCompraImpressora: cenario.entrada.precoCompraImpressora,
@@ -44,8 +48,7 @@ describe('calcularCustoBase', () => {
 
   it('não divide por zero quando a impressora não tem vida útil', () => {
     const resultado = calcularCustoBase({
-      precoKg: 90,
-      pesoGramas: 10,
+      filamentos: [{ precoKg: 90, pesoGramas: 10 }],
       quantidade: 1,
       tempoImpressaoMin: 60,
       precoCompraImpressora: 5000,
@@ -58,5 +61,25 @@ describe('calcularCustoBase', () => {
 
     expect(resultado.amortizacaoHora).toBe(0);
     expect(resultado.custoAmortizacao).toBe(0);
+  });
+
+  it('soma o custo de varios filamentos e aplica a quantidade de pecas', () => {
+    const resultado = calcularCustoBase({
+      filamentos: [
+        { precoKg: 80, pesoGramas: 100 },
+        { precoKg: 120, pesoGramas: 50 },
+      ],
+      quantidade: 3,
+      tempoImpressaoMin: 0,
+      precoCompraImpressora: 0,
+      vidaUtilHorasImpressora: 0,
+      custoManutencaoMes: 0,
+      consumoKwh: 0,
+      custoKwh: 0,
+      itensProjeto: [],
+    });
+
+    expect(resultado.custoMaterial).toBe(42);
+    expect(resultado.custoTotalBase).toBe(42);
   });
 });

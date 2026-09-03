@@ -32,7 +32,7 @@ const display = Bodoni_Moda({
 });
 
 export const metadata: Metadata = {
-  title: 'Calculadora de Preço 3D · Dojo Panda',
+  title: 'Precificadora 3D · Dojo Panda',
   description: 'Descubra quanto cobrar pela sua peça impressa em 3D.',
 };
 

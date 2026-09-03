@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { calcular } from '@/lib/calculo';
-import type { Canal, ItemProjeto, PerfilEscassez } from '@/lib/calculo';
+import type { Canal, Filamento, ItemProjeto, PerfilEscassez } from '@/lib/calculo';
 import { CANAIS_PADRAO, TARIFA_PADRAO } from '@/lib/dados';
 import { Cabecalho } from './cabecalho';
 import { CapacidadeProdutiva } from './capacidade-produtiva';
@@ -14,8 +14,11 @@ import { SecaoPrecificacao } from './secao-precificacao';
 import { SecaoProjeto } from './secao-projeto';
 
 export interface EstadoCalculadora {
-  precoKg: number;
-  pesoGramas: number;
+  filamentos: Array<
+    Filamento & {
+      id: string;
+    }
+  >;
   impressoraChave: string;
   precoCompraImpressora: number;
   vidaUtilHorasImpressora: number;
@@ -45,8 +48,13 @@ export type Alterar = <C extends keyof EstadoCalculadora>(
 // excecao e a tarifa de energia, que parte da media nacional porque quase
 // ninguem sabe o valor do kWh de cabeca — e ela e ajustavel pelo estado.
 const ESTADO_INICIAL: EstadoCalculadora = {
-  precoKg: 0,
-  pesoGramas: 0,
+  filamentos: [
+    {
+      id: 'filamento-inicial',
+      precoKg: 0,
+      pesoGramas: 0,
+    },
+  ],
   impressoraChave: '',
   precoCompraImpressora: 0,
   vidaUtilHorasImpressora: 0,
@@ -74,8 +82,7 @@ export function Calculadora() {
     setEstado((atual) => ({ ...atual, [campo]: valor }));
 
   const resultado = calcular({
-    precoKg: estado.precoKg,
-    pesoGramas: estado.pesoGramas,
+    filamentos: estado.filamentos,
     quantidade: estado.quantidade,
     tempoImpressaoMin: estado.tempoImpressaoMin,
     precoCompraImpressora: estado.precoCompraImpressora,
@@ -125,13 +132,11 @@ export function Calculadora() {
           embaixo do painel de resultado no desktop.
         */}
         <div className="grid gap-5">
-          <div className="lg:sticky lg:top-6">
-            <PainelResultado
-              canal={canalAtivo}
-              quantidade={estado.quantidade}
-              semCusto={semCusto}
-            />
-          </div>
+          <PainelResultado
+            canal={canalAtivo}
+            quantidade={estado.quantidade}
+            semCusto={semCusto}
+          />
 
           <ComparativoCanais
             canais={estado.canais}

@@ -1,4 +1,4 @@
-import type { CustoBase, EntradaCalculo, ItemProjeto } from './tipos';
+import type { CustoBase, EntradaCalculo, Filamento, ItemProjeto } from './tipos';
 
 const HORAS_UTEIS_DIA = 20;
 const DIAS_UTEIS_MES = 26;
@@ -11,8 +11,7 @@ export function arredondar(valor: number): number {
 
 type EntradaCusto = Pick<
   EntradaCalculo,
-  | 'precoKg'
-  | 'pesoGramas'
+  | 'filamentos'
   | 'quantidade'
   | 'tempoImpressaoMin'
   | 'precoCompraImpressora'
@@ -27,9 +26,23 @@ export function totalDoItem(item: ItemProjeto): number {
   return arredondar(arredondar(item.valorUnitario) * item.quantidade);
 }
 
+export function calcularCustoMaterial(
+  filamentos: readonly Filamento[],
+  quantidade = 1,
+): number {
+  const custoPorPeca = filamentos.reduce(
+    (total, filamento) =>
+      total + (filamento.precoKg / 1000) * filamento.pesoGramas,
+    0,
+  );
+
+  return arredondar(custoPorPeca * quantidade);
+}
+
 export function calcularCustoBase(entrada: EntradaCusto): CustoBase {
-  const custoMaterial = arredondar(
-    (entrada.precoKg / 1000) * entrada.pesoGramas * entrada.quantidade,
+  const custoMaterial = calcularCustoMaterial(
+    entrada.filamentos,
+    entrada.quantidade,
   );
 
   const tempoTotalHoras = (entrada.tempoImpressaoMin / 60) * entrada.quantidade;

@@ -4,7 +4,12 @@ import { calcularCapacidade, montarCascata, montarResumoUnitario } from './resul
 import type { EntradaCalculo, Resultado, ResultadoDoCanal } from './tipos';
 
 export * from './tipos';
-export { arredondar, HORAS_FIXAS_MES, totalDoItem } from './custo';
+export {
+  arredondar,
+  calcularCustoMaterial,
+  HORAS_FIXAS_MES,
+  totalDoItem,
+} from './custo';
 export { MARKUPS_ESCASSEZ } from './preco';
 
 export function calcular(entrada: EntradaCalculo): Resultado {

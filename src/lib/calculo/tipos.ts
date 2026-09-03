@@ -7,6 +7,11 @@ export interface ItemProjeto {
   quantidade: number;
 }
 
+export interface Filamento {
+  precoKg: number;
+  pesoGramas: number;
+}
+
 export interface FaixaTaxaFixa {
   precoMinimo: number;
   precoMaximo: number;
@@ -26,8 +31,7 @@ export interface Canal {
 }
 
 export interface EntradaCalculo {
-  precoKg: number;
-  pesoGramas: number;
+  filamentos: Filamento[];
   quantidade: number;
   tempoImpressaoMin: number;
   precoCompraImpressora: number;
