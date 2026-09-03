@@ -48,7 +48,7 @@ export function Cabecalho() {
       <MarcaDojoPanda className="h-[50px] w-auto justify-self-center" />
 
       <span className="justify-self-end rounded-campo bg-vermelho px-2 py-1 text-[8px] font-bold uppercase tracking-[0.14em] text-papel">
-        Calculadora
+        Precificação 3D
       </span>
     </header>
   );
