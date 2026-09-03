@@ -93,9 +93,9 @@ export function SecaoProjeto({ estado, alterar }: Props) {
         </span>
       </div>
 
-      <div className="mt-4 border-t-[1.5px] border-dashed border-tinta-3 pt-3">
+      <div className="mt-4 grid grid-cols-2 border-t-[1.5px] border-dashed border-tinta-3 pt-3">
         <CampoMoeda
-          label="Frete que você repassa ao cliente"
+          label="Frete repassado ao cliente"
           ajuda="Entra no preço final sem gerar lucro."
           valor={estado.valorFrete}
           onChange={(valor) => alterar('valorFrete', valor)}

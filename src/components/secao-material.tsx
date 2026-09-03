@@ -30,12 +30,13 @@ export function SecaoMaterial({ estado, alterar, precoKg }: Props) {
         />
       </div>
 
-      <div className="mt-3">
+      {/* Meia largura: o dado tem dois ou três dígitos, não merece a linha inteira. */}
+      <div className="mt-3 grid grid-cols-2 gap-3">
         <Campo
           label="Peso da peça"
           sufixo="g"
           inputMode="decimal"
-          ajuda={`Dá ${formatarMoeda(precoKg)} por quilo. O fatiador mostra o peso da peça antes de imprimir.`}
+          ajuda={`Dá ${formatarMoeda(precoKg)} por quilo. O fatiador mostra esse peso antes de imprimir.`}
           value={estado.pesoGramas}
           onChange={(e) =>
             alterar('pesoGramas', Math.max(Number(e.target.value) || 0, 0))

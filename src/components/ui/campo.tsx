@@ -17,7 +17,7 @@ export function Campo({ label, ocultarLabel, sufixo, ajuda, ...props }: CampoPro
   const idAjuda = ajuda ? `${id}-ajuda` : undefined;
 
   return (
-    <div>
+    <div className="min-w-0">
       <label htmlFor={id} className={ocultarLabel ? 'sr-only' : 'rotulo'}>
         {label}
       </label>

@@ -103,7 +103,10 @@ export function Calculadora() {
     resultado.canais.find((c) => c.canalId === estado.canalAtivo) ?? resultado.canais[0];
 
   return (
-    <main className="mx-auto max-w-6xl px-4 py-6 pb-44 lg:px-8 lg:pb-10">
+    // O padding inferior no mobile existe para o último bloco escapar da barra
+    // fixa de preço, que mede 222px recolhida. 256px dá folga para as variações
+    // dela (sem preço lojista, estado de erro) sem precisar medir em runtime.
+    <main className="mx-auto max-w-6xl px-4 py-6 pb-64 lg:px-8 lg:pb-10">
       <header className="mb-6 flex items-center justify-between border-b-2 border-tinta pb-3">
         <h1 className="font-display text-lg font-bold tracking-tight">
           DOJO PANDA <span className="text-vermelho">・</span> 3D
@@ -126,23 +129,31 @@ export function Calculadora() {
           />
         </div>
 
-        <div className="lg:sticky lg:top-6">
-          <PainelResultado canal={canalAtivo} quantidade={estado.quantidade} />
+        {/*
+          A coluna da direita responde "quanto cobrar" — preço, composição do
+          custo e o mesmo cálculo em cada canal. A da esquerda é "o que você
+          tem". Juntar os canais aqui também elimina o vazio que sobrava
+          embaixo do painel de resultado no desktop.
+        */}
+        <div className="grid gap-5">
+          <div className="lg:sticky lg:top-6">
+            <PainelResultado canal={canalAtivo} quantidade={estado.quantidade} />
+          </div>
+
+          <ComparativoCanais
+            canais={estado.canais}
+            resultados={resultado.canais}
+            canalAtivo={estado.canalAtivo}
+            onSelecionar={(id) => alterar('canalAtivo', id)}
+            onAlterarCanal={(id, mudanca) =>
+              alterar(
+                'canais',
+                estado.canais.map((c) => (c.id === id ? { ...c, ...mudanca } : c)),
+              )
+            }
+          />
         </div>
       </div>
-
-      <ComparativoCanais
-        canais={estado.canais}
-        resultados={resultado.canais}
-        canalAtivo={estado.canalAtivo}
-        onSelecionar={(id) => alterar('canalAtivo', id)}
-        onAlterarCanal={(id, mudanca) =>
-          alterar(
-            'canais',
-            estado.canais.map((c) => (c.id === id ? { ...c, ...mudanca } : c)),
-          )
-        }
-      />
 
       {canalAtivo.capacidade && (
         <CapacidadeProdutiva capacidade={canalAtivo.capacidade} />

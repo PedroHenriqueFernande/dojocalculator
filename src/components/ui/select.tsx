@@ -9,7 +9,7 @@ export function Select({ label, opcoes, ...props }: SelectProps) {
   const id = useId();
 
   return (
-    <div>
+    <div className="min-w-0">
       <label htmlFor={id} className="rotulo">
         {label}
       </label>

@@ -23,7 +23,9 @@ export function ComparativoCanais({
   const ativo = canais.find((c) => c.id === canalAtivo);
 
   return (
-    <section className="mt-6" aria-label="Canais de venda">
+    <section aria-label="Canais de venda">
+      <h2 className="titulo-painel mb-2 text-tinta-2">Onde você vende</h2>
+
       <div className="mb-3 flex flex-wrap gap-2">
         {resultados.map((resultado) => {
           const selecionado = resultado.canalId === canalAtivo;
@@ -44,36 +46,44 @@ export function ComparativoCanais({
         })}
       </div>
 
-      <div className="grid gap-3 sm:grid-cols-3">
+      {/*
+        Linhas, não cards lado a lado: os preços ficam alinhados na mesma
+        coluna, e comparar três valores empilhados é mais rápido do que
+        varrer três caixas na horizontal.
+      */}
+      <div className="grid gap-2">
         {resultados.map((resultado) => (
-          <div key={resultado.canalId} className="card-canal p-3">
-            <p className="text-[9px] font-semibold uppercase tracking-[0.09em] text-tinta-2">
+          <div
+            key={resultado.canalId}
+            className="card-canal flex items-center justify-between gap-3 px-3 py-2"
+          >
+            <span className="text-[9px] font-semibold uppercase tracking-[0.09em] text-tinta-2">
               {resultado.canalNome}
-            </p>
+            </span>
 
             {resultado.consumidor.ok && resultado.resumoConsumidor ? (
-              <>
-                <p className="numero font-display text-lg font-bold leading-tight">
-                  {formatarMoeda(resultado.resumoConsumidor.precoFinal)}
-                </p>
-                <p className="text-[10px] text-tinta-2">
+              <span className="flex items-baseline gap-2 text-right">
+                <span className="text-[10px] text-tinta-2">
                   lucro {formatarMoeda(resultado.resumoConsumidor.lucroLiquido)}
-                </p>
-              </>
+                </span>
+                <span className="numero font-display text-lg font-bold leading-tight">
+                  {formatarMoeda(resultado.resumoConsumidor.precoFinal)}
+                </span>
+              </span>
             ) : (
-              <p className="mt-1 text-[10px] leading-snug text-vermelho">
-                {!resultado.consumidor.ok && resultado.consumidor.motivo}
-              </p>
+              <span className="text-right text-[10px] leading-snug text-vermelho">
+                sem preço possível
+              </span>
             )}
           </div>
         ))}
       </div>
 
       {ativo && ativo.id !== 'DIRETA' && (
-        <div className="painel mt-4 p-4">
+        <div className="painel mt-3 p-4">
           <h3 className="titulo-painel mb-3">Taxas · {ativo.nome}</h3>
 
-          <div className="grid gap-3 sm:grid-cols-3">
+          <div className="grid grid-cols-2 gap-3">
             <Campo
               label="Comissão"
               sufixo="%"
@@ -92,14 +102,14 @@ export function ComparativoCanais({
             />
 
             {ativo.id === 'SHOPEE' && (
-              <label className="flex items-end gap-2 pb-2 text-[11px] leading-snug">
+              <label className="col-span-2 flex items-center gap-2 text-[11px] leading-snug">
                 <input
                   type="checkbox"
                   checked={ativo.freteGratisShopee ?? false}
                   onChange={(e) =>
                     onAlterarCanal(ativo.id, { freteGratisShopee: e.target.checked })
                   }
-                  className="mb-0.5 accent-vermelho"
+                  className="accent-vermelho"
                 />
                 Programa de Frete Grátis (+6%)
               </label>
