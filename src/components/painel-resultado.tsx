@@ -3,11 +3,17 @@
 import { useState } from 'react';
 import type { ResultadoDoCanal } from '@/lib/calculo';
 import { formatarMoeda } from '@/lib/formato';
+import { Botao } from './ui/botao';
 
 interface Props {
   canal: ResultadoDoCanal;
   quantidade: number;
 }
+
+type EstadoCopia =
+  | { status: 'copiado'; valor: number }
+  | { status: 'erro'; mensagem: string }
+  | null;
 
 /**
  * O mesmo componente serve à coluna da direita no desktop e à barra fixa no
@@ -16,6 +22,7 @@ interface Props {
  */
 export function PainelResultado({ canal, quantidade }: Props) {
   const [aberto, setAberto] = useState(false);
+  const [copia, setCopia] = useState<EstadoCopia>(null);
 
   const posicao =
     'fixed inset-x-0 bottom-0 z-10 max-h-[70vh] overflow-y-auto rounded-none border-x-0 border-b-0 shadow-none lg:static lg:max-h-none lg:overflow-visible lg:rounded-painel lg:border-[1.5px] lg:shadow-[4px_4px_0_var(--color-tinta)]';
@@ -35,6 +42,33 @@ export function PainelResultado({ canal, quantidade }: Props) {
 
   const margem =
     resumo.precoFinal > 0 ? Math.round((resumo.lucroLiquido / resumo.precoFinal) * 100) : 0;
+
+  // A confirmação vale para o valor que foi copiado, não para um intervalo de
+  // tempo: mexeu em qualquer campo, o preço muda e o rótulo volta sozinho.
+  // Evita temporizador e evita atualizar estado de componente desmontado.
+  const copiadoAgora = copia?.status === 'copiado' && copia.valor === resumo.precoFinal;
+
+  const copiarPreco = async () => {
+    const texto = formatarMoeda(resumo.precoFinal);
+
+    if (!navigator.clipboard) {
+      setCopia({
+        status: 'erro',
+        mensagem: 'Seu navegador não libera a cópia automática. Selecione o valor e copie.',
+      });
+      return;
+    }
+
+    try {
+      await navigator.clipboard.writeText(texto);
+      setCopia({ status: 'copiado', valor: resumo.precoFinal });
+    } catch {
+      setCopia({
+        status: 'erro',
+        mensagem: 'Não deu para copiar. Selecione o valor e copie na mão.',
+      });
+    }
+  };
 
   return (
     <section className={`painel p-4 ${posicao}`} aria-label="Resultado do cálculo">
@@ -61,14 +95,26 @@ export function PainelResultado({ canal, quantidade }: Props) {
         </div>
       )}
 
-      <button
-        type="button"
-        onClick={() => setAberto((v) => !v)}
-        aria-expanded={aberto}
-        className="mt-3 w-full text-left text-[10px] font-semibold uppercase tracking-wider text-vermelho focus-visible:outline focus-visible:outline-2 focus-visible:outline-vermelho lg:hidden"
-      >
-        {aberto ? 'Ocultar detalhes' : 'Ver detalhes'}
-      </button>
+      <div className="mt-3 flex items-center justify-between gap-3">
+        <Botao onClick={copiarPreco} aria-live="polite">
+          {copiadoAgora ? 'Copiado' : 'Copiar preço'}
+        </Botao>
+
+        <button
+          type="button"
+          onClick={() => setAberto((v) => !v)}
+          aria-expanded={aberto}
+          className="text-[10px] font-semibold uppercase tracking-wider text-vermelho focus-visible:outline focus-visible:outline-2 focus-visible:outline-vermelho lg:hidden"
+        >
+          {aberto ? 'Ocultar detalhes' : 'Ver detalhes'}
+        </button>
+      </div>
+
+      {copia?.status === 'erro' && (
+        <p role="alert" className="mt-2 text-[10px] leading-snug text-vermelho">
+          {copia.mensagem}
+        </p>
+      )}
 
       <div className={`${aberto ? 'block' : 'hidden'} lg:block`}>
         <dl className="mt-3 border-t-[1.5px] border-tinta pt-2">
