@@ -122,13 +122,13 @@ export function SecaoImpressao({ estado, alterar, setEstado }: Props) {
 
       <div className="mt-3 grid grid-cols-[1fr_1fr] gap-3">
         <Select
-          label="Estado"
+          label="Tarifa de energia por estado"
           value={estado.uf}
           onChange={(e) => trocarUf(e.target.value)}
           opcoes={TARIFAS_ENERGIA.map((t) => ({ valor: t.uf, rotulo: t.nome }))}
         />
         <CampoMoeda
-          label="Tarifa de energia"
+          label="Valor do kWh"
           ajuda="Valor de referência. Confira o kWh na sua conta de luz."
           valor={estado.custoKwh}
           onChange={(valor) => alterar('custoKwh', valor)}

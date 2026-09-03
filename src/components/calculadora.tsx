@@ -13,8 +13,7 @@ import { SecaoPrecificacao } from './secao-precificacao';
 import { SecaoProjeto } from './secao-projeto';
 
 export interface EstadoCalculadora {
-  precoRolo: number;
-  pesoRolo: number;
+  precoKg: number;
   pesoGramas: number;
   impressoraChave: string;
   precoCompraImpressora: number;
@@ -48,8 +47,7 @@ const UF_INICIAL = TARIFAS_ENERGIA.find((t) => t.uf === 'SP') ?? TARIFAS_ENERGIA
 // A tela nunca nasce zerada: quem acabou de comprar vê um resultado válido
 // antes de digitar qualquer coisa.
 const ESTADO_INICIAL: EstadoCalculadora = {
-  precoRolo: 89.9,
-  pesoRolo: 1000,
+  precoKg: 89.9,
   pesoGramas: 42,
   impressoraChave: IMPRESSORA_INICIAL.chave,
   precoCompraImpressora: IMPRESSORA_INICIAL.precoCompra,
@@ -77,10 +75,8 @@ export function Calculadora() {
   const alterar: Alterar = (campo, valor) =>
     setEstado((atual) => ({ ...atual, [campo]: valor }));
 
-  const precoKg = estado.pesoRolo > 0 ? (estado.precoRolo / estado.pesoRolo) * 1000 : 0;
-
   const resultado = calcular({
-    precoKg,
+    precoKg: estado.precoKg,
     pesoGramas: estado.pesoGramas,
     quantidade: estado.quantidade,
     tempoImpressaoMin: estado.tempoImpressaoMin,
@@ -118,7 +114,7 @@ export function Calculadora() {
 
       <div className="grid gap-5 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
         <div className="grid gap-5">
-          <SecaoMaterial estado={estado} alterar={alterar} precoKg={precoKg} />
+          <SecaoMaterial estado={estado} alterar={alterar} />
           <SecaoImpressao estado={estado} alterar={alterar} setEstado={setEstado} />
           <SecaoProjeto estado={estado} alterar={alterar} />
           <SecaoPrecificacao

@@ -8,11 +8,19 @@ interface CampoProps extends Omit<React.ComponentProps<'input'>, 'className'> {
    * nomeia a coluna. O label continua existindo e continua associado.
    */
   ocultarLabel?: boolean;
+  prefixo?: string;
   sufixo?: string;
   ajuda?: string;
 }
 
-export function Campo({ label, ocultarLabel, sufixo, ajuda, ...props }: CampoProps) {
+export function Campo({
+  label,
+  ocultarLabel,
+  prefixo,
+  sufixo,
+  ajuda,
+  ...props
+}: CampoProps) {
   const id = useId();
   const idAjuda = ajuda ? `${id}-ajuda` : undefined;
 
@@ -22,6 +30,11 @@ export function Campo({ label, ocultarLabel, sufixo, ajuda, ...props }: CampoPro
         {label}
       </label>
       <div className="flex items-center rounded-campo border-[1.5px] border-tinta bg-papel focus-within:shadow-[2px_2px_0_var(--color-vermelho)]">
+        {prefixo && (
+          <span aria-hidden className="shrink-0 pl-2 font-mono text-sm text-tinta-2">
+            {prefixo}
+          </span>
+        )}
         <input
           {...props}
           id={id}

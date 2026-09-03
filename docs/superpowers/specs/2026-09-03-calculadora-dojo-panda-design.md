@@ -22,7 +22,7 @@ Sociedade 50/50; a marca e a responsabilidade ficam com a Dojo Panda Story.
 | Tema | Decisão |
 |---|---|
 | Canais de venda | Venda direta + Shopee + Mercado Livre, com as estratégias específicas |
-| Filamento | Campos livres (preço do rolo + peso do rolo, ou preço/kg) — sem presets, sem cadastro |
+| Filamento | Campos livres: preço por kg e peso da peça — sem presets, sem cadastro |
 | Manutenção da impressora | Mantida, vem no preset de cada impressora |
 | Custos fixos mensais do negócio | **Fora** — não entra o rateio de aluguel/luz/internet ÷ 520 h |
 | Custos do projeto | Dentro (mecanismo `acessoriosEmbalagens`, renomeado) |
@@ -88,8 +88,8 @@ custoTotalBase = custoMaterial + custoEnergia + custoAmortizacao
 
 `custoFixoRateado` some da fórmula (era `totalCustosFixos / 520 × tempoTotalHoras`).
 
-Quando o usuário informar preço do rolo + peso do rolo em vez de preço/kg:
-`precoKg = precoRolo / (pesoRolo / 1000)`.
+O preço do filamento é informado sempre por quilo, que é como o mercado
+vende e anuncia. Não há conversão a partir do peso do rolo.
 
 ### 5.2 Markup
 
@@ -235,7 +235,7 @@ Distribuição dos campos entre os blocos:
 
 | Bloco | Campos |
 |---|---|
-| Material | Preço do rolo · peso do rolo · peso da peça — ou, alternando o modo, preço/kg direto |
+| Material | Preço do filamento por kg · peso da peça |
 | Impressão | Impressora (dropdown) · tempo · quantidade · reserva de falha (%) · UF e tarifa de energia |
 | Custos do projeto | Lista de itens (nome, valor unitário, quantidade) · frete repassado |
 | Precificação | Perfil de escassez · ajuste de markup · imposto (%) · taxa de pagamento (%) |
@@ -315,7 +315,6 @@ Os cenários:
 - **Limites** — divisor ≤ 0 (taxas ≥ 100%), quantidade 1 e > 1, tempo zero, vida útil zero
 - **Regra do Mercado Livre** — preço logo abaixo e logo acima de R$ 12,50
 - **Regra da Shopee** — frete grátis ligado e desligado
-- **Conversão de rolo** — preço/kg derivado de rolos de 1000 g, 750 g e 500 g
 
 Componentes de UI não recebem teste unitário nesta fase. O valor está no motor.
 

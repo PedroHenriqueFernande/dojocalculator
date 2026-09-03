@@ -13,9 +13,13 @@ interface CampoMoedaProps {
 }
 
 /**
- * Mostra o valor formatado em repouso e o texto cru enquanto tem foco, para
- * a pessoa poder apagar e digitar sem o cursor pular. O número sobe para o
- * pai a cada tecla; o rascunho existe só enquanto o campo está em edição.
+ * O "R$" é prefixo fixo do campo, não parte do texto editável: assim ele não
+ * some ao focar nem reaparece ao sair, e a máscara não precisa preservar o
+ * símbolo enquanto a pessoa digita.
+ *
+ * O rascunho existe só durante a edição, para o campo poder ficar vazio ou
+ * conter algo ainda incompleto ("89,") sem ser reformatado a cada tecla. O
+ * número sobe para o pai assim que der para lê-lo.
  */
 export function CampoMoeda({
   label,
@@ -31,8 +35,9 @@ export function CampoMoeda({
       label={label}
       ocultarLabel={ocultarLabel}
       ajuda={ajuda}
+      prefixo="R$"
       inputMode="decimal"
-      value={rascunho ?? formatarMoeda(valor)}
+      value={rascunho ?? formatarMoeda(valor, { simbolo: false })}
       onChange={(evento) => {
         const texto = evento.target.value;
         setRascunho(texto);
@@ -40,7 +45,7 @@ export function CampoMoeda({
         const numero = lerMoeda(texto);
         if (numero !== null && numero >= 0) onChange(numero);
       }}
-      onFocus={() => setRascunho(valor ? formatarMoeda(valor, { simbolo: false }) : '')}
+      onFocus={() => setRascunho(formatarMoeda(valor, { simbolo: false }))}
       onBlur={() => setRascunho(null)}
     />
   );
