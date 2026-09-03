@@ -1,3 +1,5 @@
+import { Calculadora } from '@/components/calculadora';
+
 export default function Home() {
-  return <main>Calculadora</main>;
+  return <Calculadora />;
 }
