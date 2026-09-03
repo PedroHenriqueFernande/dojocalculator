@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!--
+    Versão simplificada da marca, para o favicon. A 16px a boca vira sujeira e
+    sai; o resto da geometria é idêntico ao da marca completa. Fundo
+    transparente.
+  -->
+  <g transform="translate(3.9 10.9) scale(0.22)">
+    <path fill="#FFFFFF" d="M70 58h116v62c0 38-24 70-58 70s-58-32-58-70z" />
+    <g fill="#100E0D">
+    <path d="M70 58h26a26 46 0 0 1-26 46z" />
+    <path d="M186 58h-26a26 46 0 0 0 26 46z" />
+    <ellipse cx="104" cy="142" rx="16" ry="20" transform="rotate(-18 104 142)" />
+    <ellipse cx="152" cy="142" rx="16" ry="20" transform="rotate(18 152 142)" />
+    <path d="M118 160c0-4 20-4 20 0 0 8-6 14-10 14s-10-6-10-14z" />
+    </g>
+ <circle cx="106" cy="137" r="3.2" fill="#FFFFFF" />
+    <circle cx="150" cy="137" r="3.2" fill="#FFFFFF" />
+    <g fill="#D01B2E">
+      <path d="M42 26h32l-5 166H37z" />
+      <path d="M214 26h-32l5 166h32z" />
+      <rect x="22" y="50" width="212" height="20" />
+      <path d="M0 2c40 6 84 10 128 10s88-4 128-10v22c-40 6-84 10-128 10S40 30 0 24z" />
+    </g>
+  </g>
+</svg>

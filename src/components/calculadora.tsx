@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { calcular } from '@/lib/calculo';
 import type { Canal, ItemProjeto, PerfilEscassez } from '@/lib/calculo';
 import { CANAIS_PADRAO, TARIFA_PADRAO } from '@/lib/dados';
+import { Cabecalho } from './cabecalho';
 import { CapacidadeProdutiva } from './capacidade-produtiva';
 import { ComparativoCanais } from './comparativo-canais';
 import { PainelResultado } from './painel-resultado';
@@ -102,14 +103,7 @@ export function Calculadora() {
     // fixa de preço, que mede 222px recolhida. 256px dá folga para as variações
     // dela (sem preço lojista, estado de erro) sem precisar medir em runtime.
     <main className="mx-auto max-w-6xl px-4 py-6 pb-64 lg:px-8 lg:pb-10">
-      <header className="mb-6 flex items-center justify-between border-b-2 border-tinta pb-3">
-        <h1 className="font-display text-lg font-bold tracking-tight">
-          DOJO PANDA <span className="text-vermelho">・</span> 3D
-        </h1>
-        <span className="rounded-campo bg-vermelho px-2 py-1 text-[8px] font-bold uppercase tracking-[0.14em] text-papel">
-          Calculadora
-        </span>
-      </header>
+      <Cabecalho />
 
       <div className="grid gap-5 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
         <div className="grid gap-5">
